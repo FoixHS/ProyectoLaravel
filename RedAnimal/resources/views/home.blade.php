@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../funciones.php';
+/*require_once '../funciones.php';
 include('posteos.php');
 require_once '../Clases/DatabaseMYSQL.php';
 require_once '../Clases/Usuario.php';
@@ -9,7 +9,7 @@ $bd = new DatabaseMYSQL;
 $usuario = $bd->traerUsuario($_SESSION["id"]);
 
 $arrayDeUsuarios = traerArrayDeUsuarios();
-
+*/
 /* siNoEstaLogueado(); */
 
  ?>
@@ -26,7 +26,7 @@ $arrayDeUsuarios = traerArrayDeUsuarios();
   <body>
       <header>
           <div class="logo">
-            <a href="index.php">
+            <a href="home">
               <img src="/css/home/img/logo2.png" alt="logo">
             </a>
           </div>
@@ -49,11 +49,11 @@ $arrayDeUsuarios = traerArrayDeUsuarios();
             </select>
           </div>
           <div class="preguntas">
-            <a href="../faq/faq.php">Preguntas Frecuentes</a>
+            <a href="faq">Preguntas Frecuentes</a>
           </div>
           <div class="login">
             <div class="links">
-              <a href="../perfil/perfil.php">Mi Perfil: <?=$usuario['email']?></a>
+              <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
             </div>
 
           </div>
@@ -123,32 +123,24 @@ $arrayDeUsuarios = traerArrayDeUsuarios();
         </div>
 
         <main>
-          <?php
-          foreach ($posteos as $posteo) {
-           ?>
-
-         <div class="posteos">
-           <div class="descripcion">
-            <div class="foto-posteo">
-                <img style="height: 18vh; width: 17vw" src=" <?=$posteo["foto"]?> " alt=" <?=$posteo["raza"]?> ">
+             <div class="posteos">
+               <div class="descripcion">
+                    <div class="foto-posteo">
+                        <img style="height: 18vh; width: 17vw" src=" {{ $posteos ?? '' }} " alt=" {{ $posteos ?? '' }} ">
+                    </div>
+                  <div class="estado {{ $posteos ?? '' }} ">
+                    <h3> {{ $posteos ?? '' }} </h3>
+                  </div>
+                    <div class="detalles">
+                        <p><strong>Raza:</strong> {{ $posteos ?? '' }} </p>
+                        <p><strong>Zona:</strong> {{ $posteos ?? '' }} </p>
+                        <p><strong>Fecha:</strong> {{ $posteos ?? '' }} </p>
+                        <a href="#">Ver más..</a>
+                    </div>
+                  </div>
             </div>
-          <div class="estado <?=$posteo["clase"]?> ">
-            <h3> <?=$posteo["estado"]?> </h3>
-        </div>
-            <div class="detalles">
-                <p><strong>Raza:</strong> <?=$posteo["raza"]?> </p>
-                <p><strong>Zona:</strong> <?=$posteo["zona"]?> </p>
-                <p><strong>Fecha:</strong> <?=$posteo["fecha"]?> </p>
-                <a href="#">Ver más..</a>
-            </div>
-        </div>
-    </div>
 
-      <?php
-      }
-       ?>
-
-        </main>
+      </main>
 
         <aside>
           <h4>Lista de Adopcion:</h4>

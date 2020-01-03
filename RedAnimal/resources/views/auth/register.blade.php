@@ -75,7 +75,7 @@
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Repita contraseña">
 
                     <!--input y error avatar-->
-                    
+
                     <br>
                     <br>
                     <button type="submit">Registrate</button>
@@ -86,7 +86,7 @@
                         <div class="overlay-panel overlay-right">
                             <h1>Bienvenido!</h1>
                             <p>Para seguir conectado, por favor inicia sesión con tus datos</p>
-                            <a href="../login/login.php"><button class="ghost" id="signUp">Inicia Sesión </button></a>
+                            <a href="../login"><button class="ghost" id="signUp">Inicia Sesión </button></a>
                         </div>
                   </div>
               </div>

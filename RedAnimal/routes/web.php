@@ -20,3 +20,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/faq', 'FaqController@index')->name('preguntasfrecuentes');
+
+Route::get('/perfil', 'PerfilController@index')->name('perfil');
+
+Route::get('logout', function ()
+{
+    auth()->logout();
+    Session()->flush();
+
+    return Redirect::to('/login');
+})->name('logout');

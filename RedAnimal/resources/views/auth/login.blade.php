@@ -105,7 +105,7 @@
                              <div class="overlay-panel overlay-right">
                                <h1>Hola, Pet-amigo!</h1>
                                <p>Ingresa tus datos personales y comienza una aventura con nosotros</p>
-                               <a href="../registro/registro.php"><button class="ghost" id="signUp">Registrate</button></a>
+                               <a href="../register"><button class="ghost" id="signUp">Registrate</button></a>
                              </div>
                          </div>
                      </div>

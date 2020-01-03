@@ -19,11 +19,11 @@ class CreatePosteosTable extends Migration
             $table->text('img');
             $table->text('estado');
             $table->text('tipo_animal');
-            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('user_id');
             $table->text('barrio');
             $table->text('raza');
             $table->longText('texto');
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
