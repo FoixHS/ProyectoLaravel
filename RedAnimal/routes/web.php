@@ -30,3 +30,5 @@ Route::get('logout', function ()
 
     return Redirect::to('/login');
 })->name('logout');
+
+Route::get('/editar', 'UserController@index')->name('editar');

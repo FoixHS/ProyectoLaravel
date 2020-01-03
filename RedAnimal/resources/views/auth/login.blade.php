@@ -10,7 +10,7 @@
 
 <header>
     <div class="logo">
-      <a href="../home/index.php">
+      <a href="home">
         <img src="/css/login/img/logo2.png" alt="logo">
       </a>
     </div>
@@ -33,7 +33,7 @@
       </select>
     </div>
     <div class="preguntas">
-      <a href="../faq/faq.php">Preguntas Frecuentes</a>
+      <a href="faq">Preguntas Frecuentes</a>
     </div>
     </div>
 </header>

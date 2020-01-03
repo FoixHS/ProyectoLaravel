@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/css/perfil/perfil.css">
+  <link rel="stylesheet" href="/css/perfil/editar.css">
   <link rel="stylesheet" href="fontello/css/fontello.css"/>
   <title>Inicia Sesión</title>
 </head>
@@ -13,7 +12,7 @@
   <header>
       <div class="logo">
         <a href="home">
-          <img src="/css/perfil/img/logo2.png" alt="logo">
+          <img src="css/perfil/img/logo2.png" alt="logo">
         </a>
       </div>
       <div class="buscador">
@@ -42,19 +41,26 @@
 
   <main>
       <div class="container">
-          <div class="avatar">
-            <img src="../avatar/{{ $usuario ?? '' }}" alt="Foto de perfil" style="width:200px;">
-          </div>
-          <h1>Nombre: {{Auth::user()->name}}</h1>
-          <h1>Email: {{Auth::user()->email}}</h1>
-      
-          <form class="" id="nuevo-posteo" action="../Perfil/eliminar.php" method="post">
-            <button type="submit" name="button">Eliminar perfil</button>
+                <h1>Editar Perfil</h1>
+                <div class="avatar">
+                  <img src="../avatar/" alt="Foto de perfil" style="width:200px;">
+                </div>
+
+            <form method="post" action="">
+                    {{ csrf_field() }}
+                    {{ method_field('patch') }}
+                    <div class="social-container">
+                      <a href="#" class="social icon-facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="social icon-twitter"><i class="fab fa-google-plus-g"></i></a>
+                      <a href="#" class="social icon-instagram"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <h4>Nombre:</h4><input type="text" name="name"  value="{{Auth::user()->name}}" />
+<br>
+                    <h4>Email:</h4><input type="email" name="email"  value="{{Auth::user()->email}}" />
+<br>
+                        <button type="submit">Send</button>
           </form>
-          <button type="button" id="editar-perfil" name="button">
-          <a href="{{ route('editar') }}">Editar Perfil</a></button>
-          <button type="button" id="Logout" name="button">
-          <a href="{{ route('logout') }}">Cerrar Sesion</a></button>
+
       </div>
     </main>
 

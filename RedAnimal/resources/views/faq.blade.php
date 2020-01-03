@@ -12,8 +12,8 @@
   <body>
       <header>
           <div class="logo">
-            <a href="../home/index.php">
-              <img src="img/logo2.png" alt="logo">
+            <a href="home">
+              <img src="css/home/img/logo2.png" alt="logo">
             </a>
           </div>
           <div class="buscador">
@@ -35,14 +35,14 @@
             </select>
           </div>
           <div class="preguntas">
-            <a href="faq.php">Preguntas Frecuentes</a>
+            <a href="faq">Preguntas Frecuentes</a>
           </div>
           <div class="login">
             <div class="links">
-              <a href="../login/login.php">Login</a>
+              <a href="login">Login</a>
             </div>
             <div class="links">
-              <a href="../registro/registro.php">Registrarse</a>
+              <a href="register">Registrarse</a>
             </div>
           </div>
       </header>

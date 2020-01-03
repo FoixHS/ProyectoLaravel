@@ -1,18 +1,4 @@
-<?php
-session_start();
-/*require_once '../funciones.php';
-include('posteos.php');
-require_once '../Clases/DatabaseMYSQL.php';
-require_once '../Clases/Usuario.php';
 
-$bd = new DatabaseMYSQL;
-$usuario = $bd->traerUsuario($_SESSION["id"]);
-
-$arrayDeUsuarios = traerArrayDeUsuarios();
-*/
-/* siNoEstaLogueado(); */
-
- ?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
