@@ -23,7 +23,8 @@ class PerfilController extends Controller
 
     public function index()
     {
-        return view('perfil');
+      $user = Auth::user();
+     return view('perfil',compact('user',$user));
     }
 
     /**

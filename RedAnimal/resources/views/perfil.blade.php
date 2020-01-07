@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/perfil/perfil.css">
   <link rel="stylesheet" href="fontello/css/fontello.css"/>
-  <title>Inicia Sesión</title>
+  <title>Mi Perfil</title>
 </head>
 <body>
   <header>
@@ -43,18 +43,34 @@
   <main>
       <div class="container">
           <div class="avatar">
-            <img src="../avatar/{{ $usuario ?? '' }}" alt="Foto de perfil" style="width:200px;">
+            <img src="/storage/{{ $user->avatar }}" alt="Foto de perfil" style="width:200px;">
           </div>
           <h1>Nombre: {{Auth::user()->name}}</h1>
+          <br>
           <h1>Email: {{Auth::user()->email}}</h1>
-      
-          <form class="" id="nuevo-posteo" action="../Perfil/eliminar.php" method="post">
-            <button type="submit" name="button">Eliminar perfil</button>
-          </form>
+<br>
+
+          <button type="button" id="postear" name="button">
+          <a href="{{ route('agregarPosteo') }}">Subir posteo</a></button>
+<br>
           <button type="button" id="editar-perfil" name="button">
           <a href="{{ route('editar') }}">Editar Perfil</a></button>
+<br>
           <button type="button" id="Logout" name="button">
           <a href="{{ route('logout') }}">Cerrar Sesion</a></button>
+<br>
+<br><br><br>
+          <form action="/perfil" method="post" enctype="multipart/form-data">
+               @csrf
+               <label for="img">Editar foto de perfil</label><br>
+                   <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
+                   <br><br>
+               <button type="submit" name="button" class="btn btn-primary">Subir Foto</button>
+               <br><br>
+           </form>
+
+
+
       </div>
     </main>
 
