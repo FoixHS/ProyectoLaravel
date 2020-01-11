@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/perfil/editar.css">
   <link rel="stylesheet" href="fontello/css/fontello.css"/>
-  <title>Inicia Sesión</title>
+  <title>Editar mi perfil</title>
 </head>
 <body>
   <header>

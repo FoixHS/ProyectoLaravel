@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/postear/estilos.css">
   <link rel="stylesheet" href="/css/login/fontello/css/fontello.css"/>
-  <title>Inicia Sesión</title>
+  <title>Subir Posteo</title>
 </head>
 
 <header>
@@ -58,6 +58,8 @@
           <input type="text" name="barrio" value="" placeholder="Barrio">
           <br>
           <input type="text" name="raza" value="" placeholder="Raza">
+          <br>
+          <input type="date" name="fecha" value="" placeholder="Fecha">
           <br>
           <input type="text" name="texto" value="" placeholder="Descripcion">
           <br>

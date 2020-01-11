@@ -109,22 +109,27 @@
         </div>
 
         <main>
-           <div class="posteos">
-                <div class="descripcion">
-                      <div class="foto-posteo">
-                          <img style="height: 18vh; width: 17vw" src=" {{ $posteos ?? '' }} " alt=" {{ $posteos ?? '' }} ">
-                      </div>
-                      <div class="estado {{ $posteos ?? '' }} ">
-                        <h3> {{ $posteos ?? '' }} </h3>
-                      </div>
-                      <div class="detalles">
-                          <p><strong>Raza:</strong> {{ $posteos ?? '' }} </p>
-                          <p><strong>Zona:</strong> {{ $posteos ?? '' }} </p>
-                          <p><strong>Fecha:</strong> {{ $posteos ?? '' }} </p>
-                          <a href="#">Ver más..</a>
-                      </div>
-                </div>
-          </div>
+          @forelse ($posteos as $posteo)
+
+         <div class="posteos">
+           <div class="descripcion">
+            <div class="foto-posteo">
+                <img style="height: 18vh; width: 17vw" src=" {{$posteo->img}} " alt=" {{$posteo->raza}} ">
+            </div>
+          <div class="estado {{$posteo->estado}} ">
+            <h3> {{$posteo->estado}} </h3>
+        </div>
+            <div class="detalles">
+                <p><strong>Raza:</strong> {{$posteo->raza}} </p>
+                <p><strong>Zona:</strong> {{$posteo->barrio}} </p>
+                <p><strong>Fecha:</strong> {{$posteo->fecha}} </p>
+                <a href="#">Ver más..</a>
+            </div>
+        </div>
+    </div>
+    @empty
+    NO HAY POSTEOS DISPONIBLES
+    @endforelse
 
       </main>
 
