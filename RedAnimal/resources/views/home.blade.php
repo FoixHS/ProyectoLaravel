@@ -114,7 +114,7 @@
          <div class="posteos">
            <div class="descripcion">
             <div class="foto-posteo">
-                <img style="height: 18vh; width: 17vw" src=" {{$posteo->img}} " alt=" {{$posteo->raza}} ">
+                <img style="height: 18vh; width: 17vw" src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
             </div>
           <div class="estado {{$posteo->estado}} ">
             <h3> {{$posteo->estado}} </h3>

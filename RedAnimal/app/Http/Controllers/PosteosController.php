@@ -7,10 +7,6 @@ use App\posteo;
 
 class PosteosController extends Controller
 {
-  public function __construct()
-  {
-      $this->middleware('auth');
-  }
     public function detalle($id){
       $posteo = Posteo::find($id);
       $vac = compact('posteo');
@@ -30,6 +26,7 @@ class PosteosController extends Controller
       $posteo->barrio=$form["barrio"];
       $posteo->raza=$form["raza"];
       $posteo->texto=$form["texto"];
+      $posteo->texto=$form["fecha"];
       $posteo->save();
       return redirect("home");
     }

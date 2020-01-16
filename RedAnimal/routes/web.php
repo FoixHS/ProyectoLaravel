@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/faq', 'FaqController@index')->name('preguntasfrecuentes');
+Route::get('/faq', 'FaqController@index')->name('preguntasfrecuentes')->middleware('auth');
 
 //Route::get('/perfil', 'PerfilController@index')->name('perfil');
 Route::get('perfil', 'usuariosController@profile');
@@ -36,12 +36,13 @@ Route::get('logout', function ()
     return Redirect::to('/login');
 })->name('logout');
 
-Route::get('/editar', 'UserController@index')->name('editar');
+Route::get('/editar', 'UserController@index')->name('editar')->middleware('auth');
+Route::post('/editar', 'UserController@index')->name('editar')->middleware('auth');
 
 Route::get('/posteo/{id}', 'PosteosController@detalle')->name('detalle');
 
 Route::get("/agregarPosteo", function(){
   return view('/agregarPosteo');
-});
+})->middleware('auth');
 
-Route::post("/agregarPosteo", "PosteosController@agregar")->name('agregarPosteo');
+Route::post("/agregarPosteo", "PosteosController@agregar")->name('agregarPosteo')->middleware('auth');

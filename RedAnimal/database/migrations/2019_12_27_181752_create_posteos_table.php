@@ -22,8 +22,7 @@ class CreatePosteosTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->text('barrio');
             $table->text('raza');
-            $table->longText('texto');
-            $table->date('fecha');
+            $table->longText('texto')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

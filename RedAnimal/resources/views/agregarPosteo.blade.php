@@ -49,7 +49,12 @@
 
         <form class="" action="/agregarPosteo" method="post" form="postear" enctype="multipart/form-data">
           {{csrf_field()}}
-          <input type="text" name="estado" value="" placeholder="Estado">
+          <select class="estado" name="estado" id="estado">
+            <option value="" disable selected>¿En qué estado se encuentra la mascota?</option>
+            <option value="perdido">Perdida</option>
+            <option value="encontrado">Encontrada</option>
+            <option value="adopción">En adopción</option>
+          </select>
           <br>
           <input type="text" name="tipo_animal" value="" placeholder="Tipo de animal">
 
