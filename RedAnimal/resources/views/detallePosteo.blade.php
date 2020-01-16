@@ -54,6 +54,7 @@
      <h3> {{$posteo->estado}} </h3>
  </div>
      <div class="detalles">
+         <p><strong>Animal:</strong> {{$posteo->tipo_animal}} </p>
          <p><strong>Raza:</strong> {{$posteo->raza}} </p>
          <p><strong>Zona:</strong> {{$posteo->barrio}} </p>
          <p><strong>Fecha:</strong> {{$posteo->fecha}} </p>
