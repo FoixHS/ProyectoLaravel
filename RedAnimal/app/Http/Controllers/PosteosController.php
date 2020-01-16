@@ -9,8 +9,7 @@ class PosteosController extends Controller
 {
     public function detalle($id){
       $posteo = Posteo::find($id);
-      $vac = compact('posteo');
-      return view("detallePosteo", $vac);
+      return view("detallePosteo", compact('posteo'));
     }
 
     public function agregar(Request $form){
@@ -18,6 +17,8 @@ class PosteosController extends Controller
 
       $ruta = $form->file('img')->store("public");
       $nombreArchivo=basename($ruta);
+
+      echo $ruta;
 
       $posteo->img=$nombreArchivo;
       $posteo->user_id=$form["user_id"];

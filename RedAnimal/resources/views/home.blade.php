@@ -123,7 +123,7 @@
                 <p><strong>Raza:</strong> {{$posteo->raza}} </p>
                 <p><strong>Zona:</strong> {{$posteo->barrio}} </p>
                 <p><strong>Fecha:</strong> {{$posteo->fecha}} </p>
-                <a href="#">Ver más..</a>
+                <a href="/posteo/{{$posteo->id}}">Ver más..</a>
             </div>
         </div>
     </div>
