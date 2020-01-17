@@ -43,7 +43,7 @@
     </div>
 </header>
 
-<main>
+<!--<main>
 
   <div class="detalle-posteo">
     <div class="descripcion">
@@ -77,4 +77,4 @@ No hay comentarios disponibles
   </form>
 </div>
 
- </main>
+</main>-!
