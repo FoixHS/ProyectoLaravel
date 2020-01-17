@@ -56,7 +56,13 @@
             <option value="adopción">En adopción</option>
           </select>
           <br>
-          <input type="text" name="tipo_animal" value="" placeholder="Tipo de animal">
+        
+          <select class="tipo_animal" name="tipo_animal" id="tipo_animal">
+            <option value="" disable selected>Que animal es?</option>
+            <option value="Gato">Gato</option>
+            <option value="Perro">Perro</option>
+            <option value="Otro">Otro</option>
+          </select>
 
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
           <br>
