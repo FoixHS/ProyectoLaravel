@@ -61,5 +61,20 @@
      </div>
  </div>
 </div>
+<div class="comentarios">
+  @forelse ($comentarios as $comentario)
+  <h6>{{Auth::user()->name}}</h6>
+  <p>{{$comentario->texto}}</p>
+@empty
+No hay comentarios disponibles
+@endforelse
+</div>
+<div class="comentar">
+  {{csrf_field()}}
+  <form class="" action="/posteo/{id}" method="post" form="comentar" enctype="multipart/form-data">
+  <textarea name="comantar" rows="8" cols="80" placeholder="Deja aquí tu comentario"></textarea>
+  <button type="submit" name="button">Comentar</button>
+  </form>
+</div>
 
  </main>

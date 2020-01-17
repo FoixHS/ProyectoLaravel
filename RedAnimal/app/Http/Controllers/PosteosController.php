@@ -18,8 +18,6 @@ class PosteosController extends Controller
       $ruta = $form->file('img')->store("public");
       $nombreArchivo=basename($ruta);
 
-      echo $ruta;
-
       $posteo->img=$nombreArchivo;
       $posteo->user_id=$form["user_id"];
       $posteo->estado=$form["estado"];
@@ -27,7 +25,7 @@ class PosteosController extends Controller
       $posteo->barrio=$form["barrio"];
       $posteo->raza=$form["raza"];
       $posteo->texto=$form["texto"];
-      $posteo->texto=$form["fecha"];
+      $posteo->fecha=$form["fecha"];
       $posteo->save();
       return redirect("home");
     }

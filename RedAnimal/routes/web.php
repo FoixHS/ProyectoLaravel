@@ -39,7 +39,9 @@ Route::get('logout', function ()
 Route::get('/editar', 'UserController@index')->name('editar')->middleware('auth');
 Route::post('/editar', 'UserController@index')->name('editar')->middleware('auth');
 
-Route::get('/posteo/{id}', 'PosteosController@detalle')->name('detalle');
+Route::get('/posteo/{id}', 'PosteosController@detalle')->name('detalle')->middleware('auth');
+Route::get('/posteo/{id}', 'ComentariosController@mostrar')->name('detalle')->middleware('auth');
+Route::post('/posteo/{id}', 'ComentariosController@comentar')->name('detalle')->middleware('auth');
 
 Route::get("/agregarPosteo", function(){
   return view('/agregarPosteo');
