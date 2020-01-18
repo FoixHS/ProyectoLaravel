@@ -12,15 +12,11 @@ class ComentariosController extends Controller
 
     $comentario->user_id=$form["user_id"];
     $comentario->texto=$form["texto"];
+    $comentario->user_email=$form["user_email"];
     $comentario->date=$form["fecha"];
     $comentario->posteo_id=$form["posteo_id"];
     $comentario->save();
 
-    return view('detallePosteo');
+    return redirect("home");
   }
-
- public function mostrar(){
-   $comentarios = Comentario::all();
-   return view('detallePosteo', compact('comentarios'));
- }
 }

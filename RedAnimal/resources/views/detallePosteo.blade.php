@@ -42,40 +42,53 @@
 
     </div>
 </header>
+<body>
+
 
 <main>
 
-  <div class="detalle-posteo">
-    <div class="descripcion">
-     <div class="foto-posteo">
-         <img style="height: 18vh; width: 17vw" src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
-     </div>
-   <div class="estado {{$posteo->estado}} ">
-     <h3> {{$posteo->estado}} </h3>
- </div>
-     <div class="detalles">
-         <p><strong>Animal:</strong> {{$posteo->tipo_animal}} </p>
-         <p><strong>Raza:</strong> {{$posteo->raza}} </p>
-         <p><strong>Zona:</strong> {{$posteo->barrio}} </p>
-         <p><strong>Fecha:</strong> {{$posteo->fecha}} </p>
-         <p><strong>Descripción:</strong> {{$posteo->texto}} </p>
-     </div>
- </div>
-</div>
+    <div class="detalle-posteo">
+        <div class="descripcion">
+               <div class="foto-posteo">
+                   <img style="height: 18vh; width: 17vw" src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
+               </div>
+               <div class="estado {{$posteo->estado}} ">
+                     <h3> {{$posteo->estado}} </h3>
+               </div>
+               <div class="detalles">
+                   <p><strong>Animal:</strong> {{$posteo->tipo_animal}} </p>
+                   <p><strong>Raza:</strong> {{$posteo->raza}} </p>
+                   <p><strong>Zona:</strong> {{$posteo->barrio}} </p>
+                   <p><strong>Fecha:</strong> {{$posteo->fecha}} </p>
+                   <p><strong>Descripción:</strong> {{$posteo->texto}} </p>
+                   <p><strong>Email:</strong> {{$posteo->user_email}} </p>
+               </div>
+        </div></div>
+
+<br><br>
 <div class="comentarios">
   @forelse ($comentarios as $comentario)
-  <h6>{{Auth::user()->name}}</h6>
-  <p>{{$comentario->texto}}</p>
+  <div class="comentario">
+      <span>{{$comentario->texto}}</span>
+      <span id="email">{{$comentario->user_email}}</span>
+      
+  </div>
 @empty
 No hay comentarios disponibles
 @endforelse
 </div>
+<br>
 <div class="comentar">
-  {{csrf_field()}}
-  <form class="" action="/posteo/{id}" method="post" form="comentar" enctype="multipart/form-data">
-  <textarea name="comantar" rows="8" cols="80" placeholder="Deja aquí tu comentario"></textarea>
+
+  <form class="" action="/postear" method="post" form="comentar" enctype="multipart/form-data">
+    {{csrf_field()}}
+      <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+      <input type="hidden" name="user_email" value="{{Auth::user()->email}}">
+        <input type="hidden" name="posteo_id" value="{{$posteo->id}}">
+  <textarea name="texto" rows="8" cols="80" placeholder="Deja aquí tu comentario"></textarea>
   <button type="submit" name="button">Comentar</button>
   </form>
 </div>
 
 </main>
+</body>

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'reset' => '¡Tu contraseña ah sido reestablecida!',
+    'reset' => '¡Tu contraseña ha sido reestablecida!',
     'sent' => '¡Hemos enviado su enlace de restablecimiento de contraseña por correo electrónico!',
     'throttled' => 'Por favor, espere antes de volver a intentarlo.',
     'token' => 'Este token de restablecimiento de contraseña no es válido.',
