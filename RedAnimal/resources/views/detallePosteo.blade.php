@@ -25,6 +25,8 @@
 
     </div>
 </header>
+<body>
+
 
 <main>
 
@@ -47,18 +49,27 @@
 </div>
 <div class="comentarios">
   @forelse ($comentarios as $comentario)
-  <h6>{{Auth::user()->name}}</h6>
-  <p>{{$comentario->texto}}</p>
+  <div class="comentario">
+      <span>{{$comentario->texto}}</span>
+      <span id="email">{{$comentario->user_email}}</span>
+
+  </div>
 @empty
 <h2>No hay comentarios disponibles</h2>
 @endforelse
 </div>
+<br>
 <div class="comentar">
-  {{csrf_field()}}
-  <form class="" action="/posteo/{id}" method="post" form="comentar" enctype="multipart/form-data">
-  <textarea name="comantar" rows="8" cols="80" placeholder="Deja aquí tu comentario"></textarea>
+
+  <form class="" action="/postear" method="post" form="comentar" enctype="multipart/form-data">
+    {{csrf_field()}}
+      <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+      <input type="hidden" name="user_email" value="{{Auth::user()->email}}">
+        <input type="hidden" name="posteo_id" value="{{$posteo->id}}">
+  <textarea name="texto" rows="8" cols="80" placeholder="Deja aquí tu comentario"></textarea>
   <button type="submit" name="button">Comentar</button>
   </form>
 </div>
 
 </main>
+</body>

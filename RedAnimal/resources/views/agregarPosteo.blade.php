@@ -35,9 +35,9 @@
           {{csrf_field()}}
           <select class="estado select-posteo" name="estado" id="estado">
             <option value="" disable selected>¿En qué estado se encuentra la mascota?</option>
-            <option value="perdido">Perdida</option>
-            <option value="encontrado">Encontrada</option>
-            <option value="adopción">En adopción</option>
+            <option value="Perdido">Perdida</option>
+            <option value="Encontrado">Encontrada</option>
+            <option value="En adopción">En adopción</option>
           </select>
           <br>
 
@@ -49,6 +49,7 @@
           </select>
 
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+          <input type="hidden" name="user_email" value="{{Auth::user()->email}}">
           <br>
           <input type="text" name="barrio" value="" placeholder="Barrio">
           <br>

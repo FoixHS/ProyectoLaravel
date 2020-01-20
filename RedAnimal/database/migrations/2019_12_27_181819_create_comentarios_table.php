@@ -18,6 +18,7 @@ class CreateComentariosTable extends Migration
             $table->unsignedBigInteger('posteo_id');
             $table->unsignedBigInteger('user_id');
             $table->longText('texto');
+            $table->text('user_email');
             $table->timestamp('date')->useCurrent();
             $table->foreign('posteo_id')->references('id')->on('posteos');
             $table->foreign('user_id')->references('id')->on('users');

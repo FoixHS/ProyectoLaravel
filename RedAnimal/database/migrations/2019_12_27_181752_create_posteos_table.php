@@ -19,6 +19,7 @@ class CreatePosteosTable extends Migration
             $table->text('img');
             $table->text('estado');
             $table->text('tipo_animal');
+            $table->text('user_email');
             $table->unsignedBigInteger('user_id');
             $table->text('barrio');
             $table->text('raza');
