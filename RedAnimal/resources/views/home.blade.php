@@ -109,7 +109,7 @@
         </div>
 
         <main>
-          @forelse ($posteos as $posteo)
+          @forelse ($posteos->sortBy('fecha') as $posteo)
 
          <div class="posteos">
            <div class="descripcion">

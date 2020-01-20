@@ -14,7 +14,7 @@
         <img src="/css/login/img/logo2.png" alt="logo">
       </a>
     </div>
-    
+
     <div class="preguntas">
       <a href="faq">Preguntas Frecuentes</a>
     </div>
@@ -34,10 +34,10 @@
         <form class="" action="/agregarPosteo" method="post" form="postear" enctype="multipart/form-data">
           {{csrf_field()}}
           <select class="estado select-posteo" name="estado" id="estado">
-            <option value="" disable selected>¿En qué estado se encuentra la mascota?</option>
-            <option value="Perdido">Perdida</option>
-            <option value="Encontrado">Encontrada</option>
-            <option value="En adopción">En adopción</option>
+            <option value="" disable selected>¿En que situacion te encontras?</option>
+            <option value="Perdido">Perdi a mi mascota</option>
+            <option value="Encontrado">Encontre una mascota</option>
+            <option value="En adopción">Quiero dar en adopcion a una mascota</option>
           </select>
           <br>
 

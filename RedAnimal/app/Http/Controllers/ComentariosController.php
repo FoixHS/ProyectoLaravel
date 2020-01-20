@@ -19,12 +19,4 @@ class ComentariosController extends Controller
 
     return redirect("home");
   }
-<<<<<<< HEAD
-
- public function mostrar(){
-   $comentarios = comentario::all();
-   return view('detallePosteo', compact('comentarios'));
- }
-=======
->>>>>>> e0112ec6a62cecfd0187ad6d35f23ad39e6b07fa
 }

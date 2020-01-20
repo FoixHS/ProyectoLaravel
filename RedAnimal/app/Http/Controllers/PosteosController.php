@@ -9,14 +9,9 @@ use App\comentario;
 class PosteosController extends Controller
 {
     public function detalle($id){
-<<<<<<< HEAD
-      $posteo = posteo::find($id);
-      return view("detallePosteo", compact('posteo'));
-=======
-      $posteo = Posteo::find($id);
-      $comentarios = Comentario::where('posteo_id','=',$id)->get();
-      return view("detallePosteo", compact('posteo', 'comentarios'));
->>>>>>> e0112ec6a62cecfd0187ad6d35f23ad39e6b07fa
+        $posteo = Posteo::find($id);
+        $comentarios = Comentario::where('posteo_id','=',$id)->get();
+        return view("detallePosteo", compact('posteo', 'comentarios'));
     }
 
     public function agregar(Request $form){

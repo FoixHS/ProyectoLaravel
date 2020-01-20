@@ -15,7 +15,7 @@ class CreatePosteosTable extends Migration
     {
         Schema::create('posteos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamp('fecha')->useCurrent();
+            $table->timestamp('fecha');
             $table->text('img');
             $table->text('estado');
             $table->text('tipo_animal');
