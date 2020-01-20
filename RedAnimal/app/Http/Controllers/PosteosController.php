@@ -8,7 +8,7 @@ use App\posteo;
 class PosteosController extends Controller
 {
     public function detalle($id){
-      $posteo = Posteo::find($id);
+      $posteo = posteo::find($id);
       return view("detallePosteo", compact('posteo'));
     }
 

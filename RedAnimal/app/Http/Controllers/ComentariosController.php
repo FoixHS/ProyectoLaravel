@@ -20,7 +20,7 @@ class ComentariosController extends Controller
   }
 
  public function mostrar(){
-   $comentarios = Comentario::all();
+   $comentarios = comentario::all();
    return view('detallePosteo', compact('comentarios'));
  }
 }
