@@ -31,9 +31,16 @@ class UserController extends Controller
             $this->middleware('auth');
         }
 
-        public function edit(User $user)
+        public function edit(Request $request)
         {
+          $user = Auth::user();
 
+
+          $user->name = $request->name;
+          $user->email = $request->email;
+          $user->save();
+
+          return back();
         }
 
         public function update(User $user)
