@@ -71,18 +71,17 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
-          <!--<h3>¡Todo lo que necesitas saber sobre tu mascota!</h3>-->
         </div>
     </div>
 
     <div class="sidebar">
       <div>
         <nav>
-          <h3>¿Qué estas buscando?</h3>
+        <h3>¿QUE ESTAS BUSCANDO?</h3>
           <ul>
-            <li><a href="#">Perdidos / Encontrados</a></li><br>
+            <li><a href="#">Perdidos</a></li><br>
             <li><a href="#">Adoptar</a></li><br>
-            <li><a href="#">Cuidador en Transito</a></li><br>
+            <li><a href="#">Transito</a></li><br>
             <li><a href="#">Paseadores</a></li><br>
             <li><a href="#">Veterinarias</a></li><br>
             <li><a href="#">Refugios</a></li><br>
@@ -101,12 +100,14 @@
               <input id="perdido" type="checkbox" name="filtro" value=""><span class="filtros"><label for="perdido">Perdidos</label></span>
             </div>
             <div>
-              <input id="adopcion" type="checkbox" name="filtro" value=""><span class="filtros"><label for="adopcion">En adopcion</label></span>
+              <input id="adopcion" type="checkbox" name="filtro" value=""><span class="filtros"><label for="adopcion">Adopción</label></span>
           </div>
           <div>
             <button type="submit" name="button">Filtrar</button>
         </div>
         </div>
+        <button type="button" id="postear" name="button">
+          <a href="{{ route('agregarPosteo') }}">Nueva Publicación</a></button>
 
         <main>
           @forelse ($posteos->sortBy('fecha') as $posteo)
@@ -163,7 +164,29 @@
 
     </div>
     <footer>
-      <h1>COPYRIGHT 2019</h1>
+      <div class="footer-container">
+        <div class="left-col">
+          <!--<img src=../../public/css/home/img/perro1.jpg alt="" class="logo">-->
+          <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <p class="rights-text">© 2020 Creado por Alumnos Digital House Todos los derechos se reservan.</p>
+        </div>
+
+        <div class="right-col">
+          <h1>Nuestros Correos</h1>
+          <div class="border"></div>
+          <p>Ingresa tu email para recibir noticias e informacion.</p>
+          <form action="" class="correo-form">
+            <input type="text" class="txtb" placeholder="Ingresa tu email">
+            <input type="submit" class="btn" value="Enviar">
+          </form>
+        </div>
+      </div>
     </footer>
 
 

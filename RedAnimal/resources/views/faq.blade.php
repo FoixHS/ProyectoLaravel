@@ -10,15 +10,15 @@
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   </head>
   <body>
-      <header>
+  <header>
           <div class="logo">
             <a href="home">
-              <img src="css/home/img/logo2.png" alt="logo">
+              <img src="/css/home/img/logo2.png" alt="logo">
             </a>
           </div>
           <div class="buscador">
             <select name="Barrio">
-                <option value="Barrio"disabled selected>-Selecciona tu barrio-</option>
+                <option value="Barrio"disabled selected>-Barrio-</option>
                 <option value="Almagro">Almagro</option>
                 <option value="Balvanera">Balvanera</option>
                 <option value="Belgrano">Belgrano</option>
@@ -39,11 +39,9 @@
           </div>
           <div class="login">
             <div class="links">
-              <a href="login">Login</a>
+              <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
             </div>
-            <div class="links">
-              <a href="register">Registrarse</a>
-            </div>
+
           </div>
       </header>
       <h2 class="titulo">Preguntas Frecuentes</h2>

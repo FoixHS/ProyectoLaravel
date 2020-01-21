@@ -41,36 +41,35 @@
   </header>
 
   <main>
-      <div class="container">
+    <div class="container">
+      <div class="container-top">
           <div class="avatar">
-            <img src="/storage/{{ $user->avatar }}" alt="Foto de perfil" style="width:200px;">
+            <img src="/storage/{{ $user->avatar }}" alt="Foto de perfil">
           </div>
-          <h1>Nombre: {{Auth::user()->name}}</h1>
+          <h1>{{Auth::user()->name}}</h1>
           <br>
-          <h1>Email: {{Auth::user()->email}}</h1>
+          <h2>{{Auth::user()->email}}</h2>
+        </div>
 <br>
-
-          <button type="button" id="postear" name="button">
+        <div class="container-bot">
+          <!--<button type="button" id="postear" name="button">
           <a href="{{ route('agregarPosteo') }}">Subir posteo</a></button>
-<br>
+<br>!-->
           <button type="button" id="editar-perfil" name="button">
           <a href="{{ route('editar') }}">Editar Perfil</a></button>
 <br>
           <button type="button" id="Logout" name="button">
           <a href="{{ route('logout') }}">Cerrar Sesion</a></button>
 <br>
-<br><br><br>
-          <form action="/perfil" method="post" enctype="multipart/form-data">
+<form action="/perfil" method="post" enctype="multipart/form-data">
                @csrf
-               <label for="img">Editar foto de perfil</label><br>
                    <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
                    <br><br>
                <button type="submit" name="button" class="btn btn-primary">Subir Foto</button>
                <br><br>
            </form>
-
-
-
+<br><br><br>
+      </div>
       </div>
     </main>
 

@@ -2,7 +2,7 @@
 
 header{
     padding: 3px 3px;
-    background-color: #608491;
+    background-color: #4b4b4b;
     height: 60px;
     display: flex;
     justify-content: space-around;
@@ -50,7 +50,7 @@ header{
 
   body{
    /* background-image: url("img/bg-body.jpg");*/
-   background: url(login/img/bg2.png);
+   /*background: url(login/img/bg2.png);*/
     background-size: cover;
     background-position: center;
     font-family: 'Comfortaa', cursive;

@@ -1,4 +1,5 @@
 @import url("../header.css");
+@import url(footer.css);
 
 *{
   margin: 0;
@@ -6,10 +7,11 @@
   box-sizing: border-box;
 }
 body{
-  background: url(img/bg3.png);
+ /* background: url(img/bg3.png);*/
+ background-color: white;
    background-size: contain;
    background-position: center;
-   font-family: 'Comfortaa', cursive;
+   font-family: 'Muli', sans-serif;
  }
 
 /** CARROUSEL  */
@@ -56,13 +58,14 @@ body{
 /** NAV */
 nav ul li a {
   color: rgba(0, 0, 0);
-  font-size: 15px;
+  font-size: 21px;
 }
 
-/*nav ul {
-  border: 1px solid #E4F4FD;
-  background: #E4F4FD;
-}*/
+nav ul {
+  /*border: 1px solid #E4F4FD;*/
+  /*background: #bba6a3;*/
+  width: 60%;
+}
 .sidebar nav{
   padding: 10px;
   margin-left: 5px;
@@ -72,9 +75,11 @@ nav ul li a {
   color: rgba(0, 0, 0);
 }
 nav ul li{
-  width: 70%;
-  margin-left: 15px;
-  border: 1px solid #111111;
+  width: 90%;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  align-items: center;
+  border-bottom:5px solid #cfa205 ;
   list-style: none;
   text-align: center;
 }
@@ -84,10 +89,11 @@ nav ul li a{
 
 .sidebar nav h3{
   font-weight: bold;
-  font-size: 20px;
-  width: 160px;
+  font-size: 21px;
+  width: 70%;
   text-align: center;
-  margin-left: 5px;
+  margin-bottom:30px;
+  /*background: #bba6a3;*/
 }
 
 @media (max-width: 1100px) {
@@ -99,7 +105,7 @@ nav ul li a{
 
 /** FILTROS */
 .filtro{
-  background-color: #79A8C1;
+  background-color: #cfa205;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -152,7 +158,7 @@ main{
   margin-top: 60px;
 }
 .posteos{
-  border: 2px solid #111111;
+  /**border: 2px solid #111111;*/
   margin-bottom: 60px;
   height: 100%;
   border-radius: 10px;
@@ -167,6 +173,7 @@ strong{
 }
 .foto-posteo img {
   margin: 3px 0;
+  border-radius: 65%;
 }
 .estado {
   width: 80%;
@@ -174,13 +181,13 @@ strong{
 }
 
 .perdido h3{
-  background-color: #9A6965 ;
+  background-color: #e6c8a4 ;
 }
 .encontrado h3{
-  background-color: #61A43D;
+  background-color: #b9cb9d;
 }
 .adopción h3{
-  background-color: #307388;
+  background-color: #FF8967;
 }
 
 .estado h3{
@@ -194,6 +201,7 @@ strong{
   padding: 12px 45px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  margin-top: 10px;
 }
 .detalles{
   width: 100%;
@@ -304,7 +312,46 @@ button{
 button:hover{
 background-color: #7C8E95;
 }
-footer{
+button#postear {
+	border: 1px solid #D8B1AB;
+	background-color: #D8B1AB;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 8px 30px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+  margin: 20 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button#postear a{
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button#postear:active {
+	transform: scale(0.95);
+}
+
+button#postear:focus {
+	outline: none;
+}
+
+button#postear.ghost {
+	background-color: #79A8C1;
+    border-color: #79A8C1;
+    color:#FFFFFF;
+}
+
+/*footer{
   margin: 0;
   margin-top: 10px;
   padding: 0;
@@ -318,4 +365,4 @@ footer h1{
   font-size: 20px;
   position: relative;
   top: 35%;
-}
+}*/
