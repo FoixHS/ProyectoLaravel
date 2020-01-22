@@ -43,21 +43,40 @@
       <div class="container">
                 <h1>Editar Perfil</h1>
                 <div class="avatar">
-                  <img src="../avatar/" alt="Foto de perfil" style="width:200px;">
+                  <img src="/storage/{{Auth::user()->avatar}}" alt="Foto de perfil" style="width:200px;">
                 </div>
 
-            <form method="post" action="">
+            <form method="post" action=""  enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    {{ method_field('patch') }}
+
                     <div class="social-container">
                       <a href="#" class="social icon-facebook"><i class="fab fa-facebook-f"></i></a>
                       <a href="#" class="social icon-twitter"><i class="fab fa-google-plus-g"></i></a>
                       <a href="#" class="social icon-instagram"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <h4>Nombre:</h4><input type="text" name="name"  value="{{Auth::user()->name}}" />
+                    <h4>Nombre:</h4><input type="text" name="name"  value="{{Auth::user()->name}}" class="form-control @error('name') is-invalid @enderror"  />
+
+                    @error('name')
+                      <span class="invalid-feedback" role="alert">
+                          <strong style="color:red">{{ $message }}</strong>
+                      </span>
+                    @enderror
 <br>
-                    <h4>Email:</h4><input type="email" name="email"  value="{{Auth::user()->email}}" />
+                    <h4>Email:</h4><input type="email" name="email"  value="{{Auth::user()->email}}" class="form-control @error('email') is-invalid @enderror"  />
 <br>
+                    @error('email')
+                      <span class="invalid-feedback" role="alert">
+                          <strong style="color:red">{{ $message }}</strong>
+                      </span>
+                    @enderror
+                    <h4>Foto de Perfil:</h4> <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
+
+                    @error('avatar')
+                      <span class="invalid-feedback" role="alert">
+                          <strong style="color:red">{{ $message }}</strong>
+                      </span>
+                    @enderror
+                    <br>
                         <button type="submit">Send</button>
           </form>
 

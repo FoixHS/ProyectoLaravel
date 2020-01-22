@@ -24,10 +24,6 @@ Route::get('/faq', 'FaqController@index')->name('preguntasfrecuentes')->middlewa
 //Route::get('/perfil', 'PerfilController@index')->name('perfil');
 Route::get('perfil', 'usuariosController@profile');
 
-Route::post('perfil', 'usuariosController@actualizarFoto');
-
-
-
 Route::get('logout', function ()
 {
     auth()->logout();
@@ -37,7 +33,7 @@ Route::get('logout', function ()
 })->name('logout');
 
 Route::get('/editar', 'UserController@index')->name('editar')->middleware('auth');
-Route::post('/editar', 'UserController@index')->name('editar')->middleware('auth');
+Route::post('/editar', 'UserController@edit')->name('editar')->middleware('auth');
 
 Route::get('/posteo/{id}', 'PosteosController@detalle')->name('detalle')->middleware('auth');
 
@@ -48,3 +44,5 @@ Route::get("/agregarPosteo", function(){
 })->middleware('auth');
 
 Route::post("/agregarPosteo", "PosteosController@agregar")->name('agregarPosteo')->middleware('auth');
+
+Route::post("/delete", "UserController@destroy")->name('borrarUsuario')->middleware('auth');

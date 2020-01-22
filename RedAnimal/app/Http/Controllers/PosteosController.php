@@ -17,6 +17,16 @@ class PosteosController extends Controller
     public function agregar(Request $form){
       $posteo = new Posteo();
 
+      $form->validate([
+          'img' => 'required|image|mimes:jpeg,png,jpg,svg|max:4096',
+          'fecha' => 'required',
+          'estado' => 'required',
+          'tipo_animal' => 'required',
+          'barrio' => 'required',
+          'raza' => 'required',
+          'texto' => 'required',
+      ]);
+
       $ruta = $form->file('img')->store("public");
       $nombreArchivo=basename($ruta);
 

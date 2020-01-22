@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Support\Facades\Auth;
+use DB;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -35,12 +36,25 @@ class UserController extends Controller
         {
           $user = Auth::user();
 
+          $request->validate([
+              'avatar' => 'image|mimes:jpeg,png,jpg,svg|max:4096',
+              'name' => 'required',
+              'email' => 'required',
+          ]);
+          $avatarName=Auth::user()->avatar;
+          if ($request->avatar) {
+            $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
 
-          $user->name = $request->name;
-          $user->email = $request->email;
+            $request->avatar->storeAs('public',$avatarName);
+
+
+          };
+          $user->avatar = $avatarName;
+          $user->name = $request->get('name');
+          $user->email = $request->get('email');
           $user->save();
 
-          return back();
+          return view('perfil');
         }
 
         public function update(User $user)
@@ -99,8 +113,11 @@ class UserController extends Controller
      * @param  \App\User  $editar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Editar $editar)
+    public function destroy(request $request)
     {
-        //
+      $id=Auth::user()->id;
+      DB::delete('delete from users where id = ?',[$id]);
+
+        return view('home');
     }
 }

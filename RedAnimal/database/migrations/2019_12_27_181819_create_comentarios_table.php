@@ -21,7 +21,7 @@ class CreateComentariosTable extends Migration
             $table->text('user_email');
             $table->timestamp('date')->useCurrent();
             $table->foreign('posteo_id')->references('id')->on('posteos');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

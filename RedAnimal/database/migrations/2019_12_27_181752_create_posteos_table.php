@@ -24,7 +24,7 @@ class CreatePosteosTable extends Migration
             $table->text('barrio');
             $table->text('raza');
             $table->longText('texto')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

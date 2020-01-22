@@ -44,31 +44,31 @@
     <div class="container">
       <div class="container-top">
           <div class="avatar">
-            <img src="/storage/{{ $user->avatar }}" alt="Foto de perfil">
+            <img src="/storage/{{Auth::user()->avatar}}" alt="Foto de perfil">
           </div>
           <h1>{{Auth::user()->name}}</h1>
           <br>
           <h2>{{Auth::user()->email}}</h2>
         </div>
-<br>
+
         <div class="container-bot">
           <!--<button type="button" id="postear" name="button">
           <a href="{{ route('agregarPosteo') }}">Subir posteo</a></button>
 <br>!-->
           <button type="button" id="editar-perfil" name="button">
           <a href="{{ route('editar') }}">Editar Perfil</a></button>
-<br>
+
           <button type="button" id="Logout" name="button">
           <a href="{{ route('logout') }}">Cerrar Sesion</a></button>
-<br>
-<form action="/perfil" method="post" enctype="multipart/form-data">
-               @csrf
-                   <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
-                   <br><br>
-               <button type="submit" name="button" class="btn btn-primary">Subir Foto</button>
-               <br><br>
-           </form>
-<br><br><br>
+
+            <form class="" action="delete" method="post">
+            {{csrf_field()}}
+              <button type="submit" name="button">Borrar perfil</button>
+            </form>
+            <br>
+
+
+
       </div>
       </div>
     </main>
