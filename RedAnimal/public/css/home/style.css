@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 body{
- /* background: url(img/bg3.png);*/
+  background: url(img/bg3.png);
  background-color: white;
    background-size: contain;
    background-position: center;
@@ -108,7 +108,7 @@ nav ul li a{
   background-color: #cfa205;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-radius: 0px;
   width: 70vw;
   height: 70px;
@@ -151,6 +151,7 @@ nav ul li a{
 /** POSTEOS */
 main{
   display: flex;
+
   flex-wrap: wrap;
   width: 75%;
   margin: 0 auto;
@@ -158,10 +159,10 @@ main{
   margin-top: 60px;
 }
 .posteos{
-  /**border: 2px solid #111111;*/
+  border: 2px solid #111111;
   margin-bottom: 60px;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 strong{
   font-size: 20px;
@@ -172,8 +173,8 @@ strong{
   align-items: center;
 }
 .foto-posteo img {
-  margin: 3px 0;
-  border-radius: 65%;
+  margin: 0px 0;
+  border-radius: 0%;
 }
 .estado {
   width: 80%;
@@ -275,6 +276,19 @@ strong{
     width: 100%;
   }
 }
+
+/** PAGINACION **/
+
+.pag{
+  display: flex;
+  justify-content: space-around;
+}
+
+.pag ul li{
+  border-bottom:0px;
+}
+
+
 /** ASIDE */
 
 aside{

@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/faq', 'FaqController@index')->name('preguntasfrecuentes')->middleware('auth');
 
-//Route::get('/perfil', 'PerfilController@index')->name('perfil');
+Route::get('/perfil', 'PerfilController@index')->name('perfil');
 Route::get('perfil', 'usuariosController@profile');
 
 Route::get('logout', function ()

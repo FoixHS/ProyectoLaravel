@@ -22,9 +22,28 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        $posteos = posteo::all();
+
+    public function index(){
+    if (!$_GET) {
+      $posteos = posteo::paginate(15);
+      return view('home',compact('posteos'));
+    }
+    if ($_GET) {
+      if ($_GET['filtro']=='encon') {
+        $posteos = posteo::where('estado','=','Encontrado')->paginate(15);
+        return view('home',compact('posteos'));
+      }
+      if ($_GET['filtro']=='perd') {
+        $posteos = posteo::where('estado','=','Perdido')->paginate(15);
         return view('home',compact('posteos'));
     }
-}
+    if ($_GET['filtro']=='adopt') {
+      $posteos = posteo::where('estado','=','En adopción')->paginate(15);
+      return view('home',compact('posteos'));
+    }
+    if ($_GET['filtro']=='todos') {
+      $posteos = posteo::paginate(15);
+      return view('home',compact('posteos'));
+    }
+
+}}}

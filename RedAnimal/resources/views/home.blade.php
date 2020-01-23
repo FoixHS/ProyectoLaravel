@@ -1,4 +1,3 @@
-
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -92,24 +91,33 @@
       </div>
     </div>
 
-          <div class="filtro">
-            <div>
-              <input id="encontrado" type="checkbox" name="filtro" value=""><span class="filtros"><label for="encontrado">Encontrados</label></span>
-            </div>
-            <div>
-              <input id="perdido" type="checkbox" name="filtro" value=""><span class="filtros"><label for="perdido">Perdidos</label></span>
-            </div>
-            <div>
-              <input id="adopcion" type="checkbox" name="filtro" value=""><span class="filtros"><label for="adopcion">Adopción</label></span>
-          </div>
-          <div>
-            <button type="submit" name="button">Filtrar</button>
-        </div>
-        </div>
+          <form class="" action="" method="get">
+                <div class="filtro">
+                    <div>
+                        <input id="encontrado" type="radio" name="filtro" value="encon"><span class="filtros"><label for="encontrado">Encontrados</label></span>
+                    </div>
+                    <div>
+                        <input id="perdido" type="radio" name="filtro" value="perd"><span class="filtros"><label for="perdido">Perdidos</label></span>
+                    </div>
+                    <div>
+                        <input id="adopcion" type="radio" name="filtro" value="adopt"><span class="filtros"><label for="adopcion">Adopción</label></span>
+                    </div>
+                    <div>
+                        <input id="Todos" type="radio" name="filtro" value="todos"><span class="filtros"><label for="Todos">Todos</label></span>
+                    </div>
+                    <div>
+                      <button type="submit" name="button">Filtrar</button>
+                    </div>
+              </div>
+        </form>
         <button type="button" id="postear" name="button">
           <a href="{{ route('agregarPosteo') }}">Nueva Publicación</a></button>
+            <div class="pag">
 
+{{$posteos->links()}}
+            </div>
         <main>
+
           @forelse ($posteos->sortBy('fecha') as $posteo)
 
          <div class="posteos">
@@ -132,8 +140,13 @@
     @empty
     NO HAY POSTEOS DISPONIBLES
     @endforelse
+    <br>
+
 
       </main>
+
+
+
 
         <aside>
           <h4>Lista de Adopcion:</h4>
