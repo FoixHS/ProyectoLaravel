@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
           $table->longText('password');
           $table->string('avatar')->default('user.jpg');
           $table->timestamps();
+          $table->rememberToken();
         });
     }
 

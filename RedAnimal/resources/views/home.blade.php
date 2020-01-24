@@ -82,12 +82,14 @@
           <a href="{{ route('agregarPosteo') }}">Nueva Publicación</a></button>
             <div class="pag">
 
-{{$posteos ?? ''->links()}}
+                {{$posteos ?? ''->links()}}
             </div>
+<br>
 
-          @forelse ($posteos ?? ''->sortBy('fecha') as $posteo)
          <div class="posteos">
+@forelse ($posteos ?? ''->sortBy('fecha') as $posteo)
            <div class="descripcion">
+
             <div class="foto-posteo">
                 <img style="height: 18vh; width: 17vw" src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
             </div>
