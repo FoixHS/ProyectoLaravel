@@ -10,35 +10,26 @@
   <title>Mi Perfil</title>
 </head>
 <body>
-  <header>
-      <div class="logo">
-        <a href="home">
-          <img src="/css/perfil/img/logo2.png" alt="logo">
-        </a>
-      </div>
-      <div class="buscador">
-        <select name="Barrio">
-            <option value="Barrio"disabled selected>-Selecciona tu barrio-</option>
-            <option value="Almagro">Almagro</option>
-            <option value="Balvanera">Balvanera</option>
-            <option value="Belgrano">Belgrano</option>
-            <option value="Colegiales">Colegiales</option>
-            <option value="Chacarita">Chacarita</option>
-            <option value="Coghlan">Coghlan</option>
-            <option value="Caballito">Caballito</option>
-            <option value="Flores">Flores</option>
-            <option value="Nueva Pompeya">Nueva Pompeya</option>
-            <option value="Palermo">Palermo</option>
-            <option value="San Telmo">San Telmo</option>
-            <option value="Versalles">Versalles</option>
-            <option value="Villa Luro">Villa Luro</option>
-        </select>
-      </div>
-      <div class="preguntas">
-        <a href="faq">Preguntas Frecuentes</a>
-      </div>
-      </div>
-  </header>
+<header>
+      <div class="header">
+    <h2 class="logo">RED ANIMAL</h2>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
+
+    <ul class="menu">
+      <a href="#">Refugios</a>
+      <a href="#">Servicios</a>
+      <a href="#">Transito</a>
+      <a href="faq">FAQ</a>
+      <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
+      </header>
 
   <main>
     <div class="container">

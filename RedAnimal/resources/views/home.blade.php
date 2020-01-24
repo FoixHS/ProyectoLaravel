@@ -10,41 +10,28 @@
   </head>
   <body>
       <header>
-          <div class="logo">
-            <a href="home">
-              <img src="/css/home/img/logo2.png" alt="logo">
-            </a>
-          </div>
-          <div class="buscador">
-            <select name="Barrio">
-                <option value="Barrio"disabled selected>-Barrio-</option>
-                <option value="Almagro">Almagro</option>
-                <option value="Balvanera">Balvanera</option>
-                <option value="Belgrano">Belgrano</option>
-                <option value="Colegiales">Colegiales</option>
-                <option value="Chacarita">Chacarita</option>
-                <option value="Coghlan">Coghlan</option>
-                <option value="Caballito">Caballito</option>
-                <option value="Flores">Flores</option>
-                <option value="Nueva Pompeya">Nueva Pompeya</option>
-                <option value="Palermo">Palermo</option>
-                <option value="San Telmo">San Telmo</option>
-                <option value="Versalles">Versalles</option>
-                <option value="Villa Luro">Villa Luro</option>
-            </select>
-          </div>
-          <div class="preguntas">
-            <a href="faq">Preguntas Frecuentes</a>
-          </div>
-          <div class="login">
-            <div class="links">
-              <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
-            </div>
+      <div class="header">
+    <h2 href="home" class="logo">RED ANIMAL</h2>
+    <a class="home" href="home"></a>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
 
-          </div>
+    <ul class="menu">
+      <a href="#">Refugios</a>
+      <a href="#">Servicios</a>
+      <a href="#">Transito</a>
+      <a href="faq">FAQ</a>
+      <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
       </header>
-
-    <div class="carrousel">
+        <main>
+        <div class="carrousel">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -72,25 +59,6 @@
           </a>
         </div>
     </div>
-
-    <div class="sidebar">
-      <div>
-        <nav>
-        <h3>¿QUE ESTAS BUSCANDO?</h3>
-          <ul>
-            <li><a href="#">Perdidos</a></li><br>
-            <li><a href="#">Adoptar</a></li><br>
-            <li><a href="#">Transito</a></li><br>
-            <li><a href="#">Paseadores</a></li><br>
-            <li><a href="#">Veterinarias</a></li><br>
-            <li><a href="#">Refugios</a></li><br>
-            <li><a href="#">Servicios</a></li><br>
-            <li><a href="#">Contactanos</a></li><br>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
           <form class="" action="" method="get">
                 <div class="filtro">
                     <div>
@@ -116,10 +84,8 @@
 
 {{$posteos->links()}}
             </div>
-        <main>
 
           @forelse ($posteos->sortBy('fecha') as $posteo)
-
          <div class="posteos">
            <div class="descripcion">
             <div class="foto-posteo">
@@ -144,42 +110,12 @@
 
 
       </main>
-
-
-
-
-        <aside>
-          <h4>Lista de Adopcion:</h4>
-          <div class="adopcion">
-            <img src="img/perro1.jpg" alt="Perro1">
-            <br>
-            <h6>Detalles</h6>
-          </div>
-          <div class="adopcion">
-            <img src="img/perro1.jpg" alt="Perro1">
-            <br>
-            <h6>Detalles</h6>
-          </div>
-          <div class="adopcion">
-            <img src="img/perro1.jpg" alt="Perro1">
-            <br>
-            <h6>Detalles</h6>
-          </div>
-          <div class="adopcion">
-            <img src="img/perro1.jpg" alt="Perro1">
-            <br>
-            <h6>Detalles</h6>
-          </div>
-        </aside>
-
-
       </div>
 
     </div>
     <footer>
       <div class="footer-container">
         <div class="left-col">
-          <!--<img src=../../public/css/home/img/perro1.jpg alt="" class="logo">-->
           <div class="social-media">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -201,8 +137,6 @@
         </div>
       </div>
     </footer>
-
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

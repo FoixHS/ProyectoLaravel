@@ -7,7 +7,7 @@
 	margin: 0;
 }
 body {
-	background: url(../perfil/img/bg3.png);
+	background: url(../detalle/fondo.jpg);
 	background-size: cover;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -21,7 +21,8 @@ h2 {
 	text-align: center;
 }
 
-p {
+.detalles {
+	display: flex;
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -37,6 +38,7 @@ span {
 	border: solid 4px black;
 	padding: 10px;
 	border-radius: 4px;
+	margin-bottom: 30px;
 }
 a {
 	color: #333;
@@ -46,9 +48,10 @@ a {
 }
 
 button {
+	margin-top: 30px;
 	border-radius: 20px;
-	border: 1px solid #D8B1AB;
-	background-color: #D8B1AB;
+	border: 1px solid #cfa205;
+	background-color: #cfa205;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -73,7 +76,6 @@ button.ghost {
 }
 
 form {
-	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -82,7 +84,9 @@ form {
 	height: 100%;
 	text-align: center;
 }
-
+textarea{
+	border: 1px solid black;
+}
 input {
 	background-color: #eee;
 	border: none;
@@ -104,13 +108,11 @@ main{
 	0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	width: 768px;
-	max-width: 100%;
-	min-height: 480px;
 	margin-top: 80px;
 }
 
 .form-container {
+	background-image: url("../detalle/fondo.jpg");
 	position: absolute;
 	top: 0;
 	height: 100%;
@@ -247,7 +249,7 @@ main{
 .detalle-posteo{
 	border: 2px solid #608491;
 	margin-top: 5vh;
-	width: 40vw;
+	width: 50vw;
 	height: 100%;
 	text-align: center;
 }
@@ -259,15 +261,17 @@ main{
 }
 
 .comentario{
-	margin: 2px;
-	border: 1px solid grey;
+	margin: 5px;
+	background-color: #fff;
+	border-radius: 10px;
 	padding: 5px;
-	width: 30vw;
+	width: 50vw;
+	height: 10vh;
 	display: flex;
 	justify-content: space-between;
 }
 .comentario #email{
-	color: blue;
+	color: black;
 	text-align: right;
 }
 .comentario span {

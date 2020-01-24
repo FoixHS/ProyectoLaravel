@@ -8,7 +8,7 @@
 }
 
 body {
-	background: url(img/bg.png);
+	background: url(img/fondo.jpg);
 	background-size: cover;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
@@ -45,8 +45,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #D8B1AB;
-	background-color: #D8B1AB;
+	border: 1px solid #cfa205;
+	background-color: #cfa205;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -65,8 +65,8 @@ button:focus {
 }
 
 button.ghost {
-	background-color: #79A8C1;
-    border-color: #79A8C1;
+	background-color: #27283f;
+    border-color: #27283f;
     color:#FFFFFF;
 }
 

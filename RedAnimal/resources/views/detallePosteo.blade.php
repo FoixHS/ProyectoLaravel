@@ -9,22 +9,26 @@
 </head>
 
 <header>
-    <div class="logo">
-      <a href="/home">
-        <img src="/css/login/img/logo2.png" alt="logo">
-      </a>
-    </div>
+      <div class="header">
+    <h2 class="logo">RED ANIMAL</h2>
+    <a href="home"></a>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
 
-    <div class="preguntas">
-      <a href="faq">Preguntas Frecuentes</a>
-    </div>
-    <div class="login">
-      <div class="links">
-        <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
-      </div>
-
-    </div>
-</header>
+    <ul class="menu">
+      <a href="#">Refugios</a>
+      <a href="#">Servicios</a>
+      <a href="#">Transito</a>
+      <a href="faq">FAQ</a>
+      <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
+      </header>
 <body>
 
 

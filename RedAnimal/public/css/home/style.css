@@ -7,9 +7,9 @@
   box-sizing: border-box;
 }
 body{
-  background: url(img/bg3.png);
+  background: url(img/fondo.jpg);
  background-color: white;
-   background-size: contain;
+   background-size: cover;
    background-position: center;
    font-family: 'Muli', sans-serif;
  }
@@ -19,18 +19,8 @@ body{
 .carrousel{
   width: 70vw;
   padding: 0px;
-  margin: 10px auto;
+  margin: 0 auto;
   position: relative;
-}
-.carrousel h3{
-  text-align: center;
-  width: 100%;
-  color: white;
-  background-color: black;
-  opacity: 0.4;
-  position: absolute;
-  bottom: 10%;
-  font-size: 25px;
 }
 
 @media (max-width: 1530px) {
@@ -53,66 +43,14 @@ body{
 }
 
 
-
-
-/** NAV */
-nav ul li a {
-  color: rgba(0, 0, 0);
-  font-size: 21px;
-}
-
-nav ul {
-  /*border: 1px solid #E4F4FD;*/
-  /*background: #bba6a3;*/
-  width: 60%;
-}
-.sidebar nav{
-  padding: 10px;
-  margin-left: 5px;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  color: rgba(0, 0, 0);
-}
-nav ul li{
-  width: 90%;
-  margin-left: 20px;
-  margin-bottom: 15px;
-  align-items: center;
-  border-bottom:5px solid #cfa205 ;
-  list-style: none;
-  text-align: center;
-}
-nav ul li a{
-  color: #111111;
-}
-
-.sidebar nav h3{
-  font-weight: bold;
-  font-size: 21px;
-  width: 70%;
-  text-align: center;
-  margin-bottom:30px;
-  /*background: #bba6a3;*/
-}
-
-@media (max-width: 1100px) {
-  .sidebar{
-    display: none;
-  }
-}
-
-
 /** FILTROS */
 .filtro{
   background-color: #cfa205;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 0px;
   width: 70vw;
   height: 70px;
-  margin: 0 auto;
   margin-top: 50px;
 }
 .filtro label{
@@ -150,19 +88,18 @@ nav ul li a{
 
 /** POSTEOS */
 main{
-  display: flex;
-
-  flex-wrap: wrap;
-  width: 75%;
   margin: 0 auto;
-  justify-content: space-around;
-  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70vw;
 }
 .posteos{
-  border: 2px solid #111111;
+  border: 2px solid #dddbd7;
   margin-bottom: 60px;
   height: 100%;
-  border-radius: 0px;
+  background-color: #dddbd7;
 }
 strong{
   font-size: 20px;
@@ -177,30 +114,28 @@ strong{
   border-radius: 0%;
 }
 .estado {
-  width: 80%;
-  margin-left: 20px;
+  width: 100%;
 }
 
 .perdido h3{
-  background-color: #e6c8a4 ;
+  background-color: #942323 ;
 }
 .encontrado h3{
-  background-color: #b9cb9d;
+  background-color: #4C9A3C;
 }
 .adopción h3{
-  background-color: #FF8967;
+  background-color: #db773c;
 }
 
 .estado h3{
   text-align: center;
-  border-radius: 20px;
-  border: 1px solid #aec6cf;
-  width: 110%;
+  border: 1px solid #eaddd7;
+  width: 100%;
   color: #FFFFFF;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   padding: 12px 45px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-top: 10px;
 }
@@ -287,32 +222,6 @@ strong{
 .pag ul li{
   border-bottom:0px;
 }
-
-
-/** ASIDE */
-
-aside{
-  margin-left: 5vw;
-  display: none;
-}
-aside h4{
-  font-size: 30px;
-  margin-top: 20px;
-}
-.adopcion img{
-  width: 90%;
-  display:block;
-    margin:auto;
-}
-.adopcion{
-  padding: 5%;
-  border: solid 1px black;
-  margin: 3px;
-  }
-  aside h6{
-    text-align: center;
-  }
-
 /* BOTON */
 
 button{
@@ -327,26 +236,27 @@ button:hover{
 background-color: #7C8E95;
 }
 button#postear {
-	border: 1px solid #D8B1AB;
-	background-color: #D8B1AB;
+  display: block;
+  border-radius: 30%;
+	border: 1px solid #27283f;
+	background-color: #27283f;
 	color: #FFFFFF;
 	font-size: 10px;
 	font-weight: bold;
 	padding: 8px 30px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-  margin: 20 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: transform 80ms ease-in;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 button#postear a{
 	color: #FFFFFF;
-	font-size: 10px;
+	font-size: 16px;
 	font-weight: bold;
-	letter-spacing: 1px;
+	letter-spacing: 3px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
@@ -364,19 +274,3 @@ button#postear.ghost {
     border-color: #79A8C1;
     color:#FFFFFF;
 }
-
-/*footer{
-  margin: 0;
-  margin-top: 10px;
-  padding: 0;
-  width: 100%;
-  height: 8vh;
-  background-color: #608491;
-  text-align: center;
-}
-footer h1{
-  color: white;
-  font-size: 20px;
-  position: relative;
-  top: 35%;
-}*/

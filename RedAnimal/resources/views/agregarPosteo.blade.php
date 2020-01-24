@@ -9,27 +9,30 @@
 </head>
 
 <header>
-    <div class="logo">
-      <a href="home">
-        <img src="/css/login/img/logo2.png" alt="logo">
-      </a>
-    </div>
+      <div class="header">
+    <h2 class="logo">RED ANIMAL</h2>
+    <a href="home"></a>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
 
-    <div class="preguntas">
-      <a href="faq">Preguntas Frecuentes</a>
-    </div>
-    <div class="login">
-      <div class="links">
-        <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
-      </div>
-
-    </div>
-    </div>
-</header>
+    <ul class="menu">
+      <a href="#">Refugios</a>
+      <a href="#">Servicios</a>
+      <a href="#">Transito</a>
+      <a href="faq">FAQ</a>
+      <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
+      </header>
 
 <main>
     <div class="postear container" style="
-  height: 70vh">
+  height: 90vh">
 
         <form class="" action="/agregarPosteo" method="post" form="postear" enctype="multipart/form-data">
           {{csrf_field()}}
@@ -61,7 +64,22 @@
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
           <input type="hidden" name="user_email" value="{{Auth::user()->email}}">
           <br>
-          <input type="text" name="barrio" value="" placeholder="Barrio" >
+          <select type="text" class="estado select-posteo" name="barrio" value="" placeholder="Barrio">
+                <option value="Barrio"disabled selected>-Barrio-</option>
+                <option value="Almagro">Almagro</option>
+                <option value="Balvanera">Balvanera</option>
+                <option value="Belgrano">Belgrano</option>
+                <option value="Colegiales">Colegiales</option>
+                <option value="Chacarita">Chacarita</option>
+                <option value="Coghlan">Coghlan</option>
+                <option value="Caballito">Caballito</option>
+                <option value="Flores">Flores</option>
+                <option value="Nueva Pompeya">Nueva Pompeya</option>
+                <option value="Palermo">Palermo</option>
+                <option value="San Telmo">San Telmo</option>
+                <option value="Versalles">Versalles</option>
+                <option value="Villa Luro">Villa Luro</option>
+            </select>
           @error('barrio')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
