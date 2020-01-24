@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use DB;
 use App\User;
+use App\Posteo;
+use App\Comentario;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -117,7 +119,9 @@ class UserController extends Controller
     {
       $id=Auth::user()->id;
       DB::delete('delete from users where id = ?',[$id]);
+      DB::delete('delete from comentarios where user_id = ?',[$id]);
+      DB::delete('delete from posteos where user_id = ?',[$id]);
 
-        return view('home');
+      return redirect()->route('home');
     }
 }
