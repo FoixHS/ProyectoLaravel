@@ -1,0 +1,276 @@
+@import url("../header.css");
+@import url(footer.css);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: url(img/fondo.jpg);
+ background-color: white;
+   background-size: cover;
+   background-position: center;
+   font-family: 'Muli', sans-serif;
+ }
+
+/** CARROUSEL  */
+
+.carrousel{
+  width: 70vw;
+  padding: 0px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 1530px) {
+    .carrousel{
+      height: 320px;
+
+    }
+    .carrousel img{
+      height: 320px;
+      width: 800px;
+    }
+  }
+@media (max-width: 1100px) {
+  .carrousel{
+    display: none;
+  }
+  .login{
+    flex-direction: column;
+}
+}
+
+
+/** FILTROS */
+.filtro{
+  background-color: #cfa205;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70vw;
+  height: 70px;
+  margin-top: 50px;
+}
+.filtro label{
+  margin: 0;
+  color: #FFFFFF;
+}
+.filtro div{
+  margin: 0 5px;
+}
+.filtro h3{
+  font-size: 35px;
+  text-decoration: none;
+}
+.filtros label{
+  font-size: 25px;
+  text-decoration: none;
+}
+.filtro button{
+  width: 100%;
+  height: 35px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+@media (max-width: 850px) {
+  .filtro{
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 300px;
+    padding: 3px;
+  }
+}
+
+/** POSTEOS */
+main{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70vw;
+}
+.posteos{
+  border: 2px solid #dddbd7;
+  margin-bottom: 60px;
+  height: 100%;
+  background-color: #dddbd7;
+}
+strong{
+  font-size: 20px;
+}
+.foto-posteo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.foto-posteo img {
+  margin: 0px 0;
+  border-radius: 0%;
+}
+.estado {
+  width: 100%;
+}
+
+.perdido h3{
+  background-color: #942323 ;
+}
+.encontrado h3{
+  background-color: #4C9A3C;
+}
+.adopción h3{
+  background-color: #db773c;
+}
+
+.estado h3{
+  text-align: center;
+  border: 1px solid #eaddd7;
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.detalles{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 1600px) {
+  .posteos{
+    width: 28%;
+
+  }
+  .fccccoto-posteo img{
+    margin-top: 2%;
+    margin-left: 8%;
+  }
+}
+@media (max-width: 1480px) {
+  .posteos{
+    width: 28%;
+  }
+}
+@media (max-width: 1050px) {
+  .posteos{
+    width: 28%;
+
+  }
+  .foto-posteo img{
+    width: 70%;
+
+  }
+}
+@media (max-width: 940px) {
+  .posteos{
+    width: 35%;
+
+  }
+  .foto-posteo img{
+    width: 70%;
+
+  }
+  .estado h3 {
+    margin-top: 10px;
+    margin-left: 0px;
+    padding: 5px 5px;
+  }
+}
+@media (max-width: 745px) {
+  .posteos{
+    width: 40%;
+
+  }
+  .foto-posteo img{
+    width: 70%;
+    margin-left: 25px;
+    margin-top: 8%;
+  }
+  .estado h3 {
+    margin-top: 10px;
+    margin-left: -5px;
+    padding: 5px 5px;
+  }
+}
+@media (max-width: 545px) {
+  .posteos{
+    width: 40%;
+  }
+}
+@media (max-width: 435px) {
+  .posteos{
+    width: 100%;
+  }
+}
+
+/** PAGINACION **/
+
+.pag{
+  display: flex;
+  justify-content: space-around;
+}
+
+.pag ul li{
+  border-bottom:0px;
+}
+/* BOTON */
+
+button{
+  border-radius: 6px;
+  border: black 2px solid;
+  background-color: #91A5AC;
+  color: black;
+  font-weight: bold;
+  padding: 4px;
+}
+button:hover{
+background-color: #7C8E95;
+}
+button#postear {
+  display: block;
+  border-radius: 30%;
+	border: 1px solid #27283f;
+	background-color: #27283f;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 8px 30px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+button#postear a{
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button#postear:active {
+	transform: scale(0.95);
+}
+
+button#postear:focus {
+	outline: none;
+}
+
+button#postear.ghost {
+	background-color: #79A8C1;
+    border-color: #79A8C1;
+    color:#FFFFFF;
+}
