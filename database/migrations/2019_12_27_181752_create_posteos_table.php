@@ -21,7 +21,7 @@ class CreatePosteosTable extends Migration
             $table->text('tipo_animal');
             $table->text('user_email');
             $table->unsignedBigInteger('user_id');
-            $table->text('barrio');
+            $table->text('provincia');
             $table->text('raza');
             $table->longText('texto')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
