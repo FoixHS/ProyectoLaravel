@@ -55,8 +55,7 @@
 </header>
 
 <main>
-    <div class="postear container" style="
-  height: 90vh">
+    <div class="postear container">
 
         <form class="postear" action="/agregarPosteo" method="post" form="postear" enctype="multipart/form-data">
           {{csrf_field()}}
@@ -157,7 +156,7 @@
         </div>
 
         <div class="right-col">
-          <h1>Nuestros Correos</h1>
+          <h1 class="footh1">Nuestros Correos</h1>
           <div class="border"></div>
           <p>Ingresa tu email para recibir noticias e informacion.</p>
           <form action="" class="correo-form">

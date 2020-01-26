@@ -19,7 +19,7 @@ h2.titulo{
   }
   section{
       width: 100%;
-      background: url(../faq/fondo.jpg);
+      /*background: url(../faq/fondo.jpg);*/
       background-size: cover;
       display: flex;
       align-items: center;

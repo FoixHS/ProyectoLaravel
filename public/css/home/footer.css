@@ -33,6 +33,9 @@ footer{
 .right-col h1{
   font-size: 26px;
 }
+h1.footh1{
+  text-align: left!important;
+}
 
 .border{
   width: 100px;
@@ -68,7 +71,7 @@ input.btnn{
   border: none;
   font-weight: 700;
   outline: none;
-  border-radius: 30px;
+  border-radius: 30px!important;
   margin-left: 20px;
   cursor: pointer;
   transition: opacity .3s linear;

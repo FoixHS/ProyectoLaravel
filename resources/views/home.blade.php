@@ -110,21 +110,9 @@
 <div class="posteos">
   <div class="card-header">
     <img src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
-    <div class="card-menu">
-
-    </div>
-
     <div class="card-name">
       <span class="estados"> {{$posteo->estado}}</span>
     </div>
-  </div>
-  <div class="card-container">
-    <div class="left">
-      <h3>Descripción</h3>
-      <p>{{$posteo->texto}} </p>
-      <a href="/posteo/{{$posteo->id}}" class="morebtn">Ver más</a>
-    </div>
-
     <div class="right">
     <div class="item">
         <span class="type">Animal</span>
@@ -134,14 +122,21 @@
         <span class="type">Raza</span>
         <span class="word">{{$posteo->raza}}</span>
       </div>
-      <div class="item">
+      <div class="item2">
         <span class="type">Zona</span>
         <span class="word">{{$posteo->barrio}}</span>
       </div>
-      <div class="item">
+      <div class="item2">
         <span class="type">Fecha</span>
         <span class="word">{{$posteo->fecha}}</span>
       </div>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="left">
+      <h3>Descripción</h3>
+      <p>{{$posteo->texto}} </p>
+      <a href="/posteo/{{$posteo->id}}" class="morebtn">Ver más</a>
     </div>
   </div>
 </div>
@@ -163,7 +158,7 @@
           <p class="rights-text">© 2020 Creado por Alumnos Digital House Todos los derechos se reservan.</p>
         </div>
         <div class="right-col">
-          <h1>Nuestros Correos</h1>
+          <h1 class="footh1">Nuestros Correos</h1>
           <div class="border"></div>
           <p>Ingresa tu email para recibir noticias e informacion.</p>
           <form action="" class="correo-form">

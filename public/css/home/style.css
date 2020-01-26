@@ -113,25 +113,33 @@ main{
   overflow: hidden;
   box-shadow: 0px 0px 20px #000000b3;
   border: 2px solid #dddbd7;
-  margin-bottom: 60px;
-  height: 100%;
+  margin-bottom: 20px;
+  height: 35vh;
 }
 .card-header{
-  height: 100px;
-  overflow: hidden;
+  height: 100%;
+  width: 40%;
   padding: 0;
   margin-bottom: 10px;
-  box-shadow: 0px 0px 20px #000000b3;
+  /*box-shadow: 0px 0px 20px #000000b3;*/
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 .card-header img{
-  width: 300px;
-  height: 100%;
+  width: 50%;
+  height: 60%;
+  padding-right: 20px;
 }
 .card-header .card-name{
   position: relative;
-  color: white;
-  top: 60px;
+  color: black;
+  top: -25px;
   opacity: 0.7;
+  background-color: #79A8C1;
+  width: 45%;
+  text-align: center;
 }
 .card-header .estados{
   font-size: 20px;
@@ -140,10 +148,10 @@ main{
 .card-container{
   padding: 20px;
   overflow: hidden;
-  width: 300px;
+  width: 60%;
 }
 .left{
-  width: 150px;
+  width: 100%;
   float: left;
   overflow: hidden;
 }
@@ -155,24 +163,27 @@ main{
   margin: 30px 0;
 }
 .left .morebtn{
-  width: 90%;
+  width: 40%;
   background: #cfa205;
   border-radius: 12px;
   color: white;
   text-align: center;
   display: block;
   position: relative;
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-left: 60%;
   }
 .left .morebtn:hover{
   background: #8e44ad;
 }
 .right{
-  overflow: hidden;
-  float: right;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
 }
-.item{
-  margin: 6px 0;
+.item, .item2{
+  margin: 0px 0;
 }
 .type{
   display: block;

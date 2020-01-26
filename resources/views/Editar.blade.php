@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/perfil/editar.css">
-  <link rel="stylesheet" href="fontello/css/fontello.css"/>
+  <script src="https://kit.fontawesome.com/5d9b9802b3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Editar mi perfil</title>
 </head>
@@ -64,12 +64,6 @@
 
             <form method="post" action=""  enctype="multipart/form-data">
                     {{ csrf_field() }}
-
-                    <div class="social-container">
-                      <a href="#" class="social icon-facebook"><i class="fab fa-facebook-f"></i></a>
-                      <a href="#" class="social icon-twitter"><i class="fab fa-google-plus-g"></i></a>
-                      <a href="#" class="social icon-instagram"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                     <h4>Nombre:</h4><input type="text" name="name"  value="{{Auth::user()->name}}" class="form-control @error('name') is-invalid @enderror"  />
 
                     @error('name')
@@ -101,7 +95,7 @@
     <footer>
       <div class="footer-container">
         <div class="left-col">
-          <div class="social-media">
+          <div class="social-medias">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -112,7 +106,7 @@
         </div>
 
         <div class="right-col">
-          <h1>Nuestros Correos</h1>
+          <h1 class="footh1">Nuestros Correos</h1>
           <div class="border"></div>
           <p>Ingresa tu email para recibir noticias e informacion.</p>
           <form action="" class="correo-form">
