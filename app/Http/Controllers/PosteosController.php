@@ -22,7 +22,7 @@ class PosteosController extends Controller
           'fecha' => 'required',
           'estado' => 'required',
           'tipo_animal' => 'required',
-          'barrio' => 'required',
+          'provincia' => 'required',
           'raza' => 'required',
           'texto' => 'required',
       ]);
@@ -35,7 +35,7 @@ class PosteosController extends Controller
       $posteo->user_email=$form["user_email"];
       $posteo->estado=$form["estado"];
       $posteo->tipo_animal=$form["tipo_animal"];
-      $posteo->barrio=$form["barrio"];
+      $posteo->provincia=$form["provincia"];
       $posteo->raza=$form["raza"];
       $posteo->texto=$form["texto"];
       $posteo->fecha=$form["fecha"];

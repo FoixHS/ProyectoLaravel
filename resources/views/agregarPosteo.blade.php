@@ -61,10 +61,10 @@
         <form class="postear" action="/agregarPosteo" method="post" form="postear" enctype="multipart/form-data">
           {{csrf_field()}}
           <select class="estado select-posteo" name="estado" id="estado" >
-            <option value="" disable selected>¿En que situacion te encontras?</option>
-            <option value="Perdido">Perdi a mi mascota</option>
-            <option value="Encontrado">Encontre una mascota</option>
-            <option value="En adopción">Quiero dar en adopcion a una mascota</option>
+            <option value="" disable selected>¿En que situación te encontrás?</option>
+            <option value="Perdido">Perdí a mi mascota</option>
+            <option value="Encontrado">Encontré una mascota</option>
+            <option value="En adopción">Quiero dar en adopción a una mascota</option>
           </select>
           @error('estado')
               <span class="invalid-feedback" role="alert">
@@ -74,7 +74,7 @@
           <br>
 
           <select class="tipo_animal select-posteo" name="tipo_animal" id="tipo_animal" >
-            <option value="" disable selected>Que animal es?</option>
+            <option value="" disable selected>¿Qué animal es?</option>
             <option value="Gato">Gato</option>
             <option value="Perro">Perro</option>
             <option value="Otro">Otro</option>
@@ -84,10 +84,16 @@
                   <strong style="color:red">{{ $message }}</strong>
               </span>
           @enderror
+          <br>
+
+          <select class="select-posteo" name="provincia">
+            <option value="Provincia" disable selected>Seleccione su provincia</option>
+          </select>
 
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
           <input type="hidden" name="user_email" value="{{Auth::user()->email}}">
           <br>
+          <!--
           <select type="text" class="estado select-posteo" name="barrio" value="" placeholder="Barrio">
                 <option value="Barrio"disabled selected>-Barrio-</option>
                 <option value="Almagro">Almagro</option>
@@ -110,6 +116,7 @@
               </span>
           @enderror
           <br>
+          -->
           <input type="text" name="raza" value="" placeholder="Raza" >
           @error('raza')
               <span class="invalid-feedback" role="alert">
@@ -168,6 +175,23 @@
       </div>
     </footer>
 
+<script>
+
+fetch("https://apis.datos.gob.ar/georef/api/provincias")
+.then(function(rta){
+  return rta.json();
+})
+.then(function(datos){
+  var selectProvincias = document.querySelector('select[name=provincia]');
+  for( var i =0;i < datos.provincias.length; i++){
+      selectProvincias.innerHTML += "<option value='"+datos.provincias[i].id+"'>"+datos.provincias[i].nombre+"</option>";
+  }
+})
+.catch(function(error){
+  console.log(error);
+});
+
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

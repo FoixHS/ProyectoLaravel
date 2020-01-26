@@ -69,7 +69,7 @@
      <div class="detalles">
          <p><strong>Animal:</strong> {{$posteo->tipo_animal}} </p>
          <p><strong>Raza:</strong> {{$posteo->raza}} </p>
-         <p><strong>Zona:</strong> {{$posteo->barrio}} </p>
+         <p><strong>Provincia:</strong> {{$posteo->provincia}} </p>
          <p><strong>Fecha:</strong> {{$posteo->fecha}} </p>
          <p><strong>Descripción:</strong> {{$posteo->texto}} </p>
      </div>
