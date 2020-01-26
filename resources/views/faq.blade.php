@@ -12,7 +12,7 @@
   <body>
   <div class="content">
         <nav class="navbar navbar-expand-lg navbar-dark color">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="home">
         <img class="logo" src="/css/home/img/logo2.png" width="70" height="60" class="d-inline-block align-top" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
                 <a class="nav-link separar1" href="#"><span>Adoptar</span>!</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link separar2" href="../faq/faq.html"><span>Preguntas Frecuentes</span></a>
+                <a class="nav-link separar2" href="faq"><span>Preguntas Frecuentes</span></a>
               </li>
             </ul>
             <ul class="navbar-nav ml-lg-auto">
@@ -36,9 +36,9 @@
                   </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <span class="dropdown-item disable" href="#">Perfil</span>
-                  <a class="dropdown-item able" href="#">Mi Perfil</a>
-                  <a class="dropdown-item able" href="#">Editar Perfil</a>
-                  <a class="dropdown-item able" href="#">Cerrar sesión</a>
+                  <a class="dropdown-item able" href="../perfil">Mi Perfil</a>
+                  <a class="dropdown-item able" href="{{ route('editar') }}">Editar Perfil</a>
+                  <a class="dropdown-item able" href="{{ route('logout') }}">Cerrar sesión</a>
                   <div class="dropdown-divider"></div>
                   <span class="dropdown-item disable" href="#">Red de cuidado</span>
                   <a class="dropdown-item able" href="#">Refugios</a>

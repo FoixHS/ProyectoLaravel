@@ -8,7 +8,7 @@
 }
 
 body {
-	background: url(img/fondo.jpg);
+	/*background: url(img/fondo.jpg);*/
 	background-size: cover;
 	font-family: 'Montserrat', sans-serif;
 
@@ -36,14 +36,14 @@ span {
 }
 
 a {
-	color: #333;
+	color: #333!important;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
 }
 
 button {
-	border-radius: 20px;
+	border-radius: 20px!important;
 	border: 1px solid #cfa205;
 	background-color: #cfa205;
 	color: #FFFFFF;
@@ -78,7 +78,6 @@ form.registro {
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
-	
 }
 
 input#name , input#email , input#password , input#password-confirm {
@@ -109,8 +108,8 @@ main{
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	width: 768px;
-	max-width: 100%;
+	width: 768px!important;
+	max-width: 100%!important;
 	min-height: 480px;
 	margin-top: 20px;
 }

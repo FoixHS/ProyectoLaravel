@@ -4,6 +4,7 @@
   .color{
     background-color: #608491;
     height: 12vh;
+    flex-wrap: nowrap!important;
   }
   .navbar-dark .navbar-nav .nav-link{
     border: 1px white solid;

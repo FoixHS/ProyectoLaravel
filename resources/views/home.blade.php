@@ -52,27 +52,6 @@
           </div>
         </nav>
     </div>
-      <!--<header>
-      <div class="header">
-    <h2 href="home" class="logo">RED ANIMAL</h2>
-    <a class="home" href="home"></a>
-    <input type="checkbox" id="chk">
-    <label for="chk" class="show-menu-btn">
-      <i class="fas fa-ellipsis-h"></i>
-    </label>
-
-    <ul class="menu">
-      <a href="#">Refugios</a>
-      <a href="#">Servicios</a>
-      <a href="#">Transito</a>
-      <a href="faq">FAQ</a>
-      <a href="../perfil">Mi Perfil: {{Auth::user()->name}}</a>
-      <label for="chk" class="hide-menu-btn">
-        <i class="fas fa-times"></i>
-      </label>
-    </ul>
-  </div>
-</header> -->
         <main>
         <div class="carrousel">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -127,8 +106,8 @@
                 {{$posteos ?? ''->links()}}
             </div>
 <br>
-<div class="posteos">
 @forelse ($posteos ?? ''->sortBy('fecha') as $posteo)
+<div class="posteos">
   <div class="card-header">
     <img src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
     <div class="card-menu">

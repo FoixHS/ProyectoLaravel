@@ -4,9 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/registro/registro.css">
-  <link rel="stylesheet" href="/css/registro/fontello/css/fontello.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Registrate</title>
+  <script src="https://kit.fontawesome.com/5d9b9802b3.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="content">
@@ -19,14 +19,6 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="izquierda navbar-nav mr-lg-auto">
-              <li class="nav-item active ml-lg-auto">
-                <a class="nav-link separar1" href="#"><span>Adoptar</span>!</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link separar2" href="faq"><span>Preguntas Frecuentes</span></a>
-              </li>
-            </ul>
             <ul class="navbar-nav ml-lg-auto">
               <li class="nav-item active  ml-lg-auto mr-lg-5">
                 <li class="nav-item dropdown">
@@ -48,11 +40,11 @@
             </ul>
           </div>
         </nav>
-    </div>4
+    </div>
 
 <main>
     <div class="container" id="container" style="
-  height: 90vh">
+  height: 55vh">
           <div class="form-container sign-in-container">
               <form class="registro" method="POST" action="{{ route('register') }}">
                 @csrf
@@ -109,7 +101,7 @@
       <footer>
       <div class="footer-container">
         <div class="left-col">
-          <div class="social-media">
+          <div class="social-medias">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>

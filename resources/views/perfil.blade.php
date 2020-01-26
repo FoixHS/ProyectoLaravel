@@ -27,7 +27,7 @@
                 <a class="nav-link separar1" href="#"><span>Adoptar</span>!</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link separar2" href="../faq/faq.html"><span>Preguntas Frecuentes</span></a>
+                <a class="nav-link separar2" href="faq"><span>Preguntas Frecuentes</span></a>
               </li>
             </ul>
             <ul class="navbar-nav ml-lg-auto">
@@ -38,9 +38,9 @@
                   </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <span class="dropdown-item disable" href="#">Perfil</span>
-                  <a class="dropdown-item able" href="#">Mi Perfil</a>
-                  <a class="dropdown-item able" href="#">Editar Perfil</a>
-                  <a class="dropdown-item able" href="#">Cerrar sesión</a>
+                  <a class="dropdown-item able" href="../perfil">Mi Perfil</a>
+                  <a class="dropdown-item able" href="{{ route('editar') }}">Editar Perfil</a>
+                  <a class="dropdown-item able" href="{{ route('logout') }}">Cerrar sesión</a>
                   <div class="dropdown-divider"></div>
                   <span class="dropdown-item disable" href="#">Red de cuidado</span>
                   <a class="dropdown-item able" href="#">Refugios</a>

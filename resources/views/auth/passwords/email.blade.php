@@ -22,14 +22,6 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="izquierda navbar-nav mr-lg-auto">
-              <li class="nav-item active ml-lg-auto">
-                <a class="nav-link separar1" href="#"><span>Adoptar</span>!</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link separar2" href="faq"><span>Preguntas Frecuentes</span></a>
-              </li>
-            </ul>
             <ul class="navbar-nav ml-lg-auto">
               <li class="nav-item active  ml-lg-auto mr-lg-5">
                 <li class="nav-item dropdown">
@@ -100,7 +92,7 @@
 <footer>
       <div class="footer-container">
         <div class="left-col">
-          <div class="social-media">
+          <div class="social-medias">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
