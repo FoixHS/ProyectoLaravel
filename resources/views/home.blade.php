@@ -9,7 +9,50 @@
     <script src="https://kit.fontawesome.com/5d9b9802b3.js" crossorigin="anonymous"></script>
   </head>
   <body>
-      <header>
+    <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-dark color">
+        <a class="navbar-brand" href="#">
+        <img class="logo" src="/css/home/img/logo2.png" width="70" height="60" class="d-inline-block align-top" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="izquierda navbar-nav mr-lg-auto">
+              <li class="nav-item active ml-lg-auto">
+                <a class="nav-link separar1" href='/cargando'><span>Adoptar</span>!</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link separar2" href="faq"><span>Preguntas Frecuentes</span></a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-lg-auto">
+              <li class="nav-item active  ml-lg-auto mr-lg-5">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{Auth::user()->name}}
+                  </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <span class="dropdown-item disable" href="#">Perfil</span>
+                  <a class="dropdown-item able" href="../perfil">Mi Perfil</a>
+                  <a class="dropdown-item able" href="{{ route('editar') }}">Editar Perfil</a>
+                  <a class="dropdown-item able" href="{{ route('logout') }}">Cerrar sesión</a>
+                  <div class="dropdown-divider"></div>
+                  <span class="dropdown-item disable" href="#">Red de cuidado</span>
+                  <a class="dropdown-item able" href="#">Refugios</a>
+                  <a class="dropdown-item able" href="#">Cuidador en tránsito</a>
+                  <a class="dropdown-item able" href="#">Paseadores</a>
+                  <a class="dropdown-item able" href="#">Veterinarias</a>
+                  <a class="dropdown-item able" href="#">Entrenadores</a>
+                  <a class="dropdown-item able" href="#">Guias de crianza</a>
+                </div>
+                </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+      <!--<header>
       <div class="header">
     <h2 href="home" class="logo">RED ANIMAL</h2>
     <a class="home" href="home"></a>
@@ -29,7 +72,7 @@
       </label>
     </ul>
   </div>
-      </header>
+</header> -->
         <main>
         <div class="carrousel">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -81,44 +124,57 @@
         <button type="button" id="postear" name="button">
           <a href="{{ route('agregarPosteo') }}">Nueva Publicación</a></button>
             <div class="pag">
-
                 {{$posteos ?? ''->links()}}
             </div>
 <br>
-
-         <div class="posteos">
+<div class="posteos">
 @forelse ($posteos ?? ''->sortBy('fecha') as $posteo)
-           <div class="descripcion">
+  <div class="card-header">
+    <img src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
+    <div class="card-menu">
 
-            <div class="foto-posteo">
-                <img style="height: 18vh; width: 17vw" src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
-            </div>
-          <div class="estado {{$posteo->estado}} ">
-            <h3> {{$posteo->estado}} </h3>
-        </div>
-            <div class="detalles">
-                <p><strong>Animal:</strong> {{$posteo->tipo_animal}} </p>
-                <p><strong>Raza:</strong> {{$posteo->raza}} </p>
-                <p><strong>Zona:</strong> {{$posteo->barrio}} </p>
-                <p><strong>Fecha:</strong> {{$posteo->fecha}} </p>
-                <a href="/posteo/{{$posteo->id}}">Ver más..</a>
-            </div>
-        </div>
     </div>
-    @empty
+
+    <div class="card-name">
+      <span class="estados"> {{$posteo->estado}}</span>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="left">
+      <h3>Descripción</h3>
+      <p>{{$posteo->texto}} </p>
+      <a href="/posteo/{{$posteo->id}}" class="morebtn">Ver más</a>
+    </div>
+
+    <div class="right">
+    <div class="item">
+        <span class="type">Animal</span>
+        <span class="word">{{$posteo->tipo_animal}}</span>
+      </div>
+      <div class="item">
+        <span class="type">Raza</span>
+        <span class="word">{{$posteo->raza}}</span>
+      </div>
+      <div class="item">
+        <span class="type">Zona</span>
+        <span class="word">{{$posteo->barrio}}</span>
+      </div>
+      <div class="item">
+        <span class="type">Fecha</span>
+        <span class="word">{{$posteo->fecha}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+@empty
     NO HAY POSTEOS DISPONIBLES
     @endforelse
     <br>
-
-
       </main>
-      </div>
-
-    </div>
     <footer>
       <div class="footer-container">
         <div class="left-col">
-          <div class="social-media">
+          <div class="social-medias">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -127,14 +183,13 @@
           </div>
           <p class="rights-text">© 2020 Creado por Alumnos Digital House Todos los derechos se reservan.</p>
         </div>
-
         <div class="right-col">
           <h1>Nuestros Correos</h1>
           <div class="border"></div>
           <p>Ingresa tu email para recibir noticias e informacion.</p>
           <form action="" class="correo-form">
             <input type="text" class="txtb" placeholder="Ingresa tu email">
-            <input type="submit" class="btn" value="Enviar">
+            <input type="submit" class="btnn" value="Enviar">
           </form>
         </div>
       </div>

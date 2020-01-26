@@ -1,8 +1,3 @@
-body{
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans",sans-serif;
-}
 
 footer{
   background: #f1f1f1;
@@ -19,11 +14,11 @@ footer{
   flex-wrap: wrap-reverse;
 }
 
-.social-media{
+.social-medias{
   margin: 20px 0;
 }
 
-.social-media a{
+.social-medias a{
   color: #001a21;
   margin-right: 25px;
   font-size: 22px;
@@ -31,7 +26,7 @@ footer{
   transition: .3s linear;
 }
 
-.social-media a:hover{
+.social-medias a:hover{
   color: #cfa205;
 }
 
@@ -45,7 +40,7 @@ footer{
   background: #cfa205;
 }
 
-.newsletter-form{
+.correo-form{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,7 +60,7 @@ footer{
   min-width: 260px;
 }
 
-.btn{
+input.btnn{
   padding: 18px 40px;
   font-size: 16px;
   color: #f1f1f1;
@@ -77,9 +72,10 @@ footer{
   margin-left: 20px;
   cursor: pointer;
   transition: opacity .3s linear;
+  width: 128px;
 }
 
-.btn:hover{
+.btnn:hover{
   opacity: .7;
 }
 
@@ -108,9 +104,8 @@ footer{
 
 
 @media screen and (max-width:700px){
-  .btn{
+  .btnn{
     margin: 0;
-    width: 100%;
     margin-top: 20px;
     }
 }

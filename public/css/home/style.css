@@ -1,13 +1,11 @@
 @import url("../header.css");
-@import url(footer.css);
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body{
-  background: url(img/fondo.jpg);
+  /*background: url(img/fondo.jpg);*/
  background-color: white;
    background-size: cover;
    background-position: center;
@@ -21,6 +19,7 @@ body{
   padding: 0px;
   margin: 0 auto;
   position: relative;
+  margin-top: 20px;
 }
 
 @media (max-width: 1530px) {
@@ -78,15 +77,26 @@ body{
 
 @media (max-width: 850px) {
   .filtro{
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    height: 100%;
-    width: 300px;
     padding: 3px;
   }
+  .filtro label{
+    font-size:15px;
+  }
 }
-
-/** POSTEOS */
+@media (max-width: 485px) {
+  .filtro{
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100%;
+    padding: 3px;
+  }
+  .filtro label{
+    font-size:10px;
+  }
+}
+/*posteos*/
 main{
   margin: 0 auto;
   display: flex;
@@ -96,120 +106,75 @@ main{
   width: 70vw;
 }
 .posteos{
-  border: 2px solid #dddbd7;
-  margin-bottom: 60px;
-  height: 100%;
-  background-color: #dddbd7;
+  width: 300px;
+  background: #f1f1f1;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px #000000b3;
 }
-strong{
+.card-header{
+  height: 100px;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 20px #000000b3;
+}
+.card-header img{
+  width: 300px;
+  height: 100%;
+}
+.card-header .card-name{
+  position: relative;
+  color: white;
+  top: 60px;
+  opacity: 0.7;
+}
+.card-header .estados{
+  font-size: 20px;
+  display: block;
+}
+.card-container{
+  padding: 20px;
+  overflow: hidden;
+  width: 300px;
+}
+.left{
+  width: 150px;
+  float: left;
+  overflow: hidden;
+}
+.left h3{
+  color: #cfa205;
   font-size: 20px;
 }
-.foto-posteo{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.left p{
+  margin: 30px 0;
 }
-.foto-posteo img {
-  margin: 0px 0;
-  border-radius: 0%;
-}
-.estado {
-  width: 100%;
-}
-
-.perdido h3{
-  background-color: #942323 ;
-}
-.encontrado h3{
-  background-color: #4C9A3C;
-}
-.adopción h3{
-  background-color: #db773c;
-}
-
-.estado h3{
+.left .morebtn{
+  width: 90%;
+  background: #cfa205;
+  border-radius: 12px;
+  color: white;
   text-align: center;
-  border: 1px solid #eaddd7;
-  width: 100%;
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 45px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-top: 10px;
+  display: block;
+  position: relative;
+  margin-top: 20px;
+  }
+.left .morebtn:hover{
+  background: #8e44ad;
 }
-.detalles{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.right{
+  overflow: hidden;
+  float: right;
 }
-@media (max-width: 1600px) {
-  .posteos{
-    width: 28%;
-
-  }
-  .fccccoto-posteo img{
-    margin-top: 2%;
-    margin-left: 8%;
-  }
+.item{
+  margin: 6px 0;
 }
-@media (max-width: 1480px) {
-  .posteos{
-    width: 28%;
-  }
+.type{
+  display: block;
+  font-size: 20px;
 }
-@media (max-width: 1050px) {
-  .posteos{
-    width: 28%;
-
-  }
-  .foto-posteo img{
-    width: 70%;
-
-  }
-}
-@media (max-width: 940px) {
-  .posteos{
-    width: 35%;
-
-  }
-  .foto-posteo img{
-    width: 70%;
-
-  }
-  .estado h3 {
-    margin-top: 10px;
-    margin-left: 0px;
-    padding: 5px 5px;
-  }
-}
-@media (max-width: 745px) {
-  .posteos{
-    width: 40%;
-
-  }
-  .foto-posteo img{
-    width: 70%;
-    margin-left: 25px;
-    margin-top: 8%;
-  }
-  .estado h3 {
-    margin-top: 10px;
-    margin-left: -5px;
-    padding: 5px 5px;
-  }
-}
-@media (max-width: 545px) {
-  .posteos{
-    width: 40%;
-  }
-}
-@media (max-width: 435px) {
-  .posteos{
-    width: 100%;
-  }
+.word{
+  font-size: 10px;
 }
 
 /** PAGINACION **/
@@ -237,7 +202,7 @@ background-color: #7C8E95;
 }
 button#postear {
   display: block;
-  border-radius: 30%;
+  border-radius: 20px;
 	border: 1px solid #27283f;
 	background-color: #27283f;
 	color: #FFFFFF;

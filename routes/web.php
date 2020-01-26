@@ -46,3 +46,7 @@ Route::get("/agregarPosteo", function(){
 Route::post("/agregarPosteo", "PosteosController@agregar")->name('agregarPosteo')->middleware('auth');
 
 Route::post("/delete", "UserController@destroy")->name('borrarUsuario')->middleware('auth');
+
+Route::get('/cargando', function(){
+  return view('Loadingpage.blade.php');
+});

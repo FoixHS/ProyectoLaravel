@@ -40,7 +40,7 @@ a {
 }
 
 button {
-	border-radius: 20px;
+	border-radius: 20px!important;
 	border: 1px solid #D8B1AB;
 	background-color: #D8B1AB;
 	color: #FFFFFF;
@@ -66,7 +66,7 @@ button.ghost {
     color:#FFFFFF;
 }
 
-form {
+form.postear {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;

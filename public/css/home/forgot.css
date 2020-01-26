@@ -1,0 +1,12 @@
+@import url("../header.css");
+
+.col-md-8{
+    margin-top: 80px;
+    margin-bottom: 180px;
+  }
+
+.btn-primary {
+    color: #fff;
+    background-color: #cfa205;
+    border-color: #cfa205;
+}
