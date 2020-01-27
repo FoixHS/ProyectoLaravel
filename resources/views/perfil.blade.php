@@ -107,6 +107,7 @@
         </div>
       </div>
     </footer>
+    
 <script>
   var form = document.getElementById("miForm");
   form.onsubmit = function(e){
