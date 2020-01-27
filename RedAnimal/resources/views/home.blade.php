@@ -31,18 +31,18 @@
               <li class="nav-item active  ml-lg-auto mr-lg-5">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  ¿Qué estás buscando?
+                  {{Auth::user()->name}}
                   </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <span class="dropdown-item disable" href="#">A tu servicio..</span>
-                  <a class="dropdown-item able" href="#">Paseadores</a>
-                  <a class="dropdown-item able" href="#">Veterinarias</a>
-                  <a class="dropdown-item able" href="#">Entrenadores</a>
-                  <a class="dropdown-item able" href="#">Guias de crianza</a>
+                  <span class="dropdown-item disable" href="#">Perfil</span>
+                  <a class="dropdown-item able" href="#">Mi Perfil</a>
+                  <a class="dropdown-item able" href="#">Cerrar Sesion</a>
                   <div class="dropdown-divider"></div>
                   <span class="dropdown-item disable" href="#">Red de cuidado..</span>
                   <a class="dropdown-item able" href="#">Refugios</a>
-                  <a class="dropdown-item able" href="#">Cuidador en tránsito</a>
+                  <a class="dropdown-item able" href="#">Entrenadores</a>
+                  <a class="dropdown-item able" href="#">Guias de crianza</a>
+                  
                 </div>
                 </li>
             </ul>

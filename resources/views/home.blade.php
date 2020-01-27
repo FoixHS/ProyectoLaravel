@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="izquierda navbar-nav mr-lg-auto">
               <li class="nav-item active ml-lg-auto">
-                <a class="nav-link separar1" href='/cargando'><span>Adoptar</span>!</a>
+                <a class="nav-link separar1" href='/home?filtro=adopt&button='><span>Adoptar</span>!</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link separar2" href="faq"><span>Preguntas Frecuentes</span></a>
@@ -81,7 +81,8 @@
           </a>
         </div>
     </div>
-          <form class="" action="" method="get">
+    <br>
+          <form class="filtros" action="" method="get">
                 <div class="filtro">
                     <div>
                         <input id="encontrado" type="radio" name="filtro" value="encon"><span class="filtros"><label for="encontrado">Encontrados</label></span>
@@ -106,54 +107,59 @@
                 {{$posteos ?? ''->links()}}
             </div>
 <br>
+
+<main>
+  <div class="container">
 @forelse ($posteos ?? ''->sortBy('fecha') as $posteo)
-<div class="posteos">
-  <div class="card-header">
-    <img src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
-    <div class="card-name">
+  <div class="posteo">
+
+    <div class="foto-posteo">
+        <img src=" /storage/{{$posteo->img}} " alt=" {{$posteo->raza}} {{$posteo->id}} ">
+    </div>
+    <div class="estado-posteo" id="{{$posteo->estado}}">
       <span class="estados"> {{$posteo->estado}}</span>
     </div>
-    <div class="right">
+    <div class="descripcion">
     <div class="item">
-        <span class="type">Animal</span>
+        <span class="type">Animal:</span>
         <span class="word">{{$posteo->tipo_animal}}</span>
-      </div>
-      <div class="item">
-        <span class="type">Raza</span>
-        <span class="word">{{$posteo->raza}}</span>
-      </div>
-      <div class="item2">
-        <span class="type">Provincia</span>
-        <span class="word">{{$posteo->provincia}}</span>
-      </div>
-      <div class="item2">
-        <span class="type">Fecha</span>
-        <span class="word">{{$posteo->fecha}}</span>
-      </div>
     </div>
-  </div>
-  <div class="card-container">
-    <div class="left">
-      <h3>Descripción</h3>
-      <p>{{$posteo->texto}} </p>
+    <div class="item">
+        <span class="type">Raza:</span>
+        <span class="word">{{$posteo->raza}}</span>
+    </div>
+    <div class="item">
+        <span class="type">Provincia:</span>
+        <span class="word">{{$posteo->provincia}}</span>
+    </div>
+    <div class="item">
+        <span class="type">Fecha:</span>
+        <span class="word">{{$posteo->fecha}}</span>
+    </div>
+    <br>
+    <div class="item">
+      <h3>Descripción:</h3>
+      <p>{{substr($posteo->texto, 0, 60)}} </p>
       <a href="/posteo/{{$posteo->id}}" class="morebtn">Ver más</a>
     </div>
-  </div>
+    </div>
+
 </div>
-@empty
-    NO HAY POSTEOS DISPONIBLES
-    @endforelse
-    <br>
-      </main>
+
+  @empty
+      NO HAY POSTEOS DISPONIBLES
+      @endforelse
+
+
+</main>
+
     <footer>
       <div class="footer-container">
         <div class="left-col">
           <div class="social-medias">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/Red-Animal-100121648220121/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/RedAnimal2020"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:Redanimal2020@gmail.com"><i class="fas fa-envelope-square"></i></a>
           </div>
           <p class="rights-text">© 2020 Creado por Alumnos Digital House Todos los derechos se reservan.</p>
         </div>
