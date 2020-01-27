@@ -17,6 +17,6 @@ class ComentariosController extends Controller
     $comentario->posteo_id=$form["posteo_id"];
     $comentario->save();
 
-    return redirect("home");
+    return back();
   }
 }
