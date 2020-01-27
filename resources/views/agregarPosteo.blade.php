@@ -183,7 +183,7 @@ fetch("https://apis.datos.gob.ar/georef/api/provincias")
 .then(function(datos){
   var selectProvincias = document.querySelector('select[name=provincia]');
   for( var i =0;i < datos.provincias.length; i++){
-      selectProvincias.innerHTML += "<option value='"+datos.provincias[i].id+"'>"+datos.provincias[i].nombre+"</option>";
+      selectProvincias.innerHTML += "<option value='"+datos.provincias[i].nombre+"'>"+datos.provincias[i].nombre+"</option>";
   }
 })
 .catch(function(error){

@@ -11,7 +11,7 @@
   <body>
     <div class="content">
         <nav class="navbar navbar-expand-lg navbar-dark color">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="home">
         <img class="logo" src="/css/home/img/logo2.png" width="70" height="60" class="d-inline-block align-top" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,8 +123,8 @@
         <span class="word">{{$posteo->raza}}</span>
       </div>
       <div class="item2">
-        <span class="type">Zona</span>
-        <span class="word">{{$posteo->barrio}}</span>
+        <span class="type">Provincia</span>
+        <span class="word">{{$posteo->provincia}}</span>
       </div>
       <div class="item2">
         <span class="type">Fecha</span>
