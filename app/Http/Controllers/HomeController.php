@@ -28,7 +28,11 @@ class HomeController extends Controller
       $posteos = posteo::paginate(15);
       return view('home',compact('posteos'));
     }
-    if ($_GET) {
+    if ($_GET['page']) {
+      $posteos = posteo::paginate(15);
+      return view('home',compact('posteos'));
+    }else{
+    if (isset($_GET['filtro'])) {
       if ($_GET['filtro']=='encon') {
         $posteos = posteo::where('estado','=','Encontrado')->paginate(15);
         return view('home',compact('posteos'));
@@ -45,5 +49,4 @@ class HomeController extends Controller
       $posteos = posteo::paginate(15);
       return view('home',compact('posteos'));
     }
-
-}}}
+}}}}
