@@ -10,3 +10,13 @@
     background-color: #cfa205;
     border-color: #cfa205;
 }
+
+.card-header {
+  background-color: #27283f;
+  color: white;
+}
+
+body {
+  background-image: url("../home/img/bg2.png");
+  background-size: cover;
+}

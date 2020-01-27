@@ -2,13 +2,18 @@
 
   /* HEADER BOOTSTRAP*/
   .color{
-    background-color: #608491;
+    background-color: #2b2b2c;
     height: 12vh;
     flex-wrap: nowrap!important;
+    font-family: 'Montserrat', sans-serif;
   }
   .navbar-dark .navbar-nav .nav-link{
-    border: 1px white solid;
+    border: 2px solid #ffffff;
     border-radius: 6px;
+    color: white!important;
+  }
+  a.nav-link.separar2{
+    margin-left: 10px;
   }
   .disable{
     color: #c1c1c1;
@@ -20,11 +25,11 @@
     font-size: .8em;
   }
  .able:hover{
-   background-color: #608491;
+   background-color: #2b2b2c;
    color:white;
  }
  .navbar-collapse{
-   background-color: #608491;
+   background-color: #2b2b2c;
  }
  .izquierda{
    display: flex;

@@ -6,12 +6,13 @@
   <link rel="stylesheet" href="/css/detalle/detalle.css">
   <link rel="stylesheet" href="/css/login/fontello/css/fontello.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/5d9b9802b3.js" crossorigin="anonymous"></script>
   <title>Detalle del posteo</title>
 </head>
 
 <div class="content">
         <nav class="navbar navbar-expand-lg navbar-dark color">
-        <a class="navbar-brand" href="home">
+        <a class="navbar-brand" href="../home">
         <img class="logo" src="/css/home/img/logo2.png" width="70" height="60" class="d-inline-block align-top" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,7 +104,7 @@
 <footer>
       <div class="footer-container">
         <div class="left-col">
-          <div class="social-media">
+          <div class="social-medias">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>

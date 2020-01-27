@@ -7,8 +7,8 @@
 	margin: 0;
 }
 body {
-	/*background: url(img/fondo.jpg);
-	background-size: cover;*/
+	background: url(../home/img/bg2.png);
+	background-size: cover;
 	font-family: 'Montserrat', sans-serif;
 	
 }
@@ -29,6 +29,7 @@ main{
  .top-section{
 	padding: 60px 40px;
 	/*background: #2c2c54aa;*/
+	background-color: white;
 }
 .pic{
 	width: 150px;
@@ -87,15 +88,7 @@ main{
 				justify-content: center;
 				font-size: 28px;
 				text-transform: uppercase;
-			  }
-			  
-			  .border{
-				width: 1px;
-				height: 20px;
-				background: #bbb;
-				margin: 0 30px;
-			  }
-			  
+			  }			  
 			  .bottom-section span{
 				font-size: 14px;
 				display: block;
@@ -143,8 +136,8 @@ main{
 			  button{
 				padding: 10px 20px;
 				font-size: 16px;
-				color: #111111;
-				background: #aaaaaa;
+				color: #ffffff;
+				background: #2b2b2c;
 				border: none;
 				font-weight: 300;
 				outline: none;

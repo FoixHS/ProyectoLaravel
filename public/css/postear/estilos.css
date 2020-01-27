@@ -7,7 +7,7 @@
 	margin: 0;
 }
 body {
-	/*background: url("../postear/fondo.jpg");*/
+	background: url("../perfil/img/bg4.png");
 	background-size: cover;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -41,8 +41,8 @@ a {
 
 button {
 	border-radius: 20px!important;
-	border: 1px solid #D8B1AB;
-	background-color: #D8B1AB;
+	border: 1px solid #cfa205;
+	background-color: #cfa205;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
