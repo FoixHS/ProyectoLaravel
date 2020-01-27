@@ -80,8 +80,7 @@
   @forelse ($comentarios as $comentario)
   <div class="comentario">
       <span>{{$comentario->texto}}</span>
-      <span id="email">{{$comentario->user_email}}</span>
-
+      <span id="email"><a href="mailto:{{$comentario->user_email}}">{{$comentario->user_email}}</a></span>
   </div>
 @empty
 <h2>No hay comentarios disponibles</h2>

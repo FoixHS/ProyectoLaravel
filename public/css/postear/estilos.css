@@ -163,3 +163,9 @@ main{
 			width: 95%!important;
   }
 }
+@media (max-width: 600px) {
+    .comentario{
+			display: flex;
+			flex-direction: column!important;
+  }
+}

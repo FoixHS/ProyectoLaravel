@@ -153,17 +153,16 @@ main{
 }
 
 .comentario{
-	margin: 5px;
 	border: 1px solid #27283f;
 	background-color: #fff;
 	border-radius: 10px;
 	padding: 5px;
 	width: 50%;
-	height: 10vh;
+	height: 8vh;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-left: 315px;
+	margin:5px auto;
 }
 .comentario #email{
 	color: black;
