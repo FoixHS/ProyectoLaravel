@@ -59,11 +59,11 @@
 
         <form class="postear" action="/agregarPosteo" method="post" form="postear" enctype="multipart/form-data">
           {{csrf_field()}}
-          <select class="estado select-posteo" name="estado" id="estado" >
+          <select class="select-posteo form-control @error('estado') is-invalid @enderror" name="estado" id="estado" >
             <option value="" disable selected>¿En que situación te encontrás?</option>
-            <option value="Perdido">Perdí a mi mascota</option>
-            <option value="Encontrado">Encontré una mascota</option>
-            <option value="En adopción">Quiero dar en adopción a una mascota</option>
+            <option value="Perdido"@if (old('estado') == 'Perdido') selected="selected" @endif>Perdí a mi mascota</option>
+            <option value="Encontrado"@if (old('estado') == 'Encontrado') selected="selected" @endif>Encontré una mascota</option>
+            <option value="En adopción"@if (old('estado') == 'En Adopción') selected="selected" @endif>Quiero dar en adopción a una mascota</option>
           </select>
           @error('estado')
               <span class="invalid-feedback" role="alert">
@@ -72,11 +72,11 @@
           @enderror
           <br>
 
-          <select class="tipo_animal select-posteo" name="tipo_animal" id="tipo_animal" >
+          <select class="tipo_animal select-posteo form-control @error('tipo_animal') is-invalid @enderror" name="tipo_animal" id="tipo_animal" >
             <option value="" disable selected>¿Qué animal es?</option>
-            <option value="Gato">Gato</option>
-            <option value="Perro">Perro</option>
-            <option value="Otro">Otro</option>
+            <option value="Gato"  @if (old('tipo_animal') == 'Gato') selected="selected" @endif>Gato</option>
+            <option value="Perro"@if (old('tipo_animal') == 'Perro') selected="selected" @endif>Perro</option>
+            <option value="Otro"@if (old('tipo_animal') == 'Otro') selected="selected" @endif>Otro</option>
           </select>
           @error('tipo_animal')
               <span class="invalid-feedback" role="alert">
@@ -85,8 +85,8 @@
           @enderror
           <br>
 
-          <select class="select-posteo" name="provincia">
-            <option value="Provincia" disable selected>Seleccione su provincia</option>
+          <select class="select-posteo form-control @error('provincia') is-invalid @enderror" name="provincia">
+            <option value="provincia" disable selected>Seleccione su provincia</option>
           </select>
 
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
@@ -116,21 +116,21 @@
           @enderror
           <br>
           -->
-          <input type="text" name="raza" value="" placeholder="Raza" >
+          <input class="form-control @error('raza') is-invalid @enderror" type="text" name="raza" value="{{ old('raza') }}" placeholder="Raza" >
           @error('raza')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
               </span>
           @enderror
           <br>
-          <input type="date" name="fecha" value="" placeholder="Fecha">
+          <input class="form-control @error('fecha') is-invalid @enderror" type="date" name="fecha" value="{{ old('fecha') }}" placeholder="Fecha">
           @error('fecha')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
               </span>
           @enderror
           <br>
-          <input type="text" name="texto" value="" placeholder="Descripcion">
+          <input class="form-control @error('texto') is-invalid @enderror" type="text" name="texto" value="{{ old('texto') }}" placeholder="Descripcion">
           @error('texto')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
@@ -138,7 +138,7 @@
           @enderror
           <br>
           <label for="img">Foto</label>
-          <input type="file" name="img" value="" placeholder="Imagen" >
+          <input class="form-control @error('img') is-invalid @enderror" type="file" name="img" value="{{ old('img') }}" placeholder="Imagen" >
           @error('img')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
