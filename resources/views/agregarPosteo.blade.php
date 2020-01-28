@@ -56,12 +56,14 @@
     <div class="postear container">
         <form class="postear" action="/agregarPosteo" method="post" form="postear" enctype="multipart/form-data">
           {{csrf_field()}}
-          <select class="select-posteo form-control @error('estado') is-invalid @enderror" name="estado" id="estado" >
+
+          <select class="estado select-posteo form-control @error('estado') is-invalid @enderror" name="estado" id="estado" >
             <option value="" disable selected>¿En que situación te encontrás?</option>
             <option value="Perdido"@if (old('estado') == 'Perdido') selected="selected" @endif>Perdí a mi mascota</option>
             <option value="Encontrado"@if (old('estado') == 'Encontrado') selected="selected" @endif>Encontré una mascota</option>
             <option value="En adopción"@if (old('estado') == 'En Adopción') selected="selected" @endif>Quiero dar en adopción a una mascota</option>
           </select>
+          <span class="estado"></span>
           @error('estado')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
@@ -75,6 +77,7 @@
             <option value="Perro"@if (old('tipo_animal') == 'Perro') selected="selected" @endif>Perro</option>
             <option value="Otro"@if (old('tipo_animal') == 'Otro') selected="selected" @endif>Otro</option>
           </select>
+          <span class="tipo_animal"></span>
           @error('tipo_animal')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
@@ -82,9 +85,10 @@
           @enderror
           <br>
 
-          <select class="select-posteo form-control @error('provincia') is-invalid @enderror" name="provincia">
+          <select class="provincia select-posteo form-control @error('provincia') is-invalid @enderror" name="provincia">
             <option value="" disable selected>Seleccione su provincia</option>
           </select>
+          <span class="provincia"></span>
           @error('provincia')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
@@ -94,59 +98,44 @@
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
           <input type="hidden" name="user_email" value="{{Auth::user()->email}}">
           <br>
-          <!--
-          <select type="text" class="estado select-posteo" name="barrio" value="" placeholder="Barrio">
-                <option value="Barrio"disabled selected>-Barrio-</option>
-                <option value="Almagro">Almagro</option>
-                <option value="Balvanera">Balvanera</option>
-                <option value="Belgrano">Belgrano</option>
-                <option value="Colegiales">Colegiales</option>
-                <option value="Chacarita">Chacarita</option>
-                <option value="Coghlan">Coghlan</option>
-                <option value="Caballito">Caballito</option>
-                <option value="Flores">Flores</option>
-                <option value="Nueva Pompeya">Nueva Pompeya</option>
-                <option value="Palermo">Palermo</option>
-                <option value="San Telmo">San Telmo</option>
-                <option value="Versalles">Versalles</option>
-                <option value="Villa Luro">Villa Luro</option>
-            </select>
-          @error('barrio')
-              <span class="invalid-feedback" role="alert">
-                  <strong style="color:red">{{ $message }}</strong>
-              </span>
-          @enderror
-          <br>
-          -->
-          <input class="form-control @error('raza') is-invalid @enderror" type="text" name="raza" value="{{ old('raza') }}" placeholder="Raza" >
+
+          <input class="raza form-control @error('raza') is-invalid @enderror" type="text" name="raza" value="{{ old('raza') }}" placeholder="Raza" >
+          <span class="raza"></span>
           @error('raza')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
               </span>
           @enderror
           <br>
-          <input class="form-control @error('fecha') is-invalid @enderror" type="date" name="fecha" value="{{ old('fecha') }}" placeholder="Fecha">
+
+          <input class="fecha form-control @error('fecha') is-invalid @enderror" type="date" name="fecha" value="{{ old('fecha') }}" placeholder="Fecha">
+          <span class="fecha"></span>
           @error('fecha')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
               </span>
           @enderror
           <br>
-          <input class="form-control @error('texto') is-invalid @enderror" type="text" name="texto" value="{{ old('texto') }}" placeholder="Descripcion">
+
+          <input class="desc form-control @error('texto') is-invalid @enderror" type="text" name="texto" value="{{ old('texto') }}" placeholder="Descripcion">
+          <span class="desc"></span>
           @error('texto')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
               </span>
           @enderror
           <br>
+
           <label for="img">Foto</label>
-          <input class="form-control @error('img') is-invalid @enderror" type="file" name="img" value="{{ old('img') }}" placeholder="Imagen" >
+          <input class="img form-control @error('img') is-invalid @enderror" type="file" name="img" value="{{ old('img') }}" placeholder="Imagen" >
+          <span class="img"></span>
           @error('img')
               <span class="invalid-feedback" role="alert">
                   <strong style="color:red">{{ $message }}</strong>
               </span>
           @enderror
           <br>
+
           <button type="submit" name="button">Subir Posteo</button>
         </form>
       </div>
@@ -191,6 +180,120 @@ fetch("https://apis.datos.gob.ar/georef/api/provincias")
 });
 
 </script>
+
+<script>
+
+var elFormulario = document.querySelector('form.postear');
+
+var errores = 0;
+
+var estado = document.querySelector('select.estado');
+var spanEstado = document.querySelector('span.estado');
+
+var tipoAnimal = document.querySelector('select.tipo_animal');
+var spanTipoAnimal = document.querySelector('span.tipo_animal');
+
+var provincia = document.querySelector('select.provincia');
+var spanProvincia = document.querySelector('span.provincia');
+
+var raza = document.querySelector('input.raza');
+var spanRaza = document.querySelector('span.raza');
+
+var fecha = document.querySelector('input.fecha');
+var spanFecha = document.querySelector('span.fecha');
+
+var desc = document.querySelector('input.desc');
+var spanDesc = document.querySelector('span.desc');
+
+var img = document.querySelector('input.img');
+var spanImg = document.querySelector('span.img');
+
+elFormulario.onsubmit = function(event){
+  if(estado.value == ""){
+    errores++;
+    event.preventDefault();
+    spanEstado.innerHTML = "Por favor elija una opción";
+    estado.style.borderColor = "red";
+    spanEstado.style.color = "red";
+    spanEstado.style.fontSize = "10px";
+  }else{
+    spanEstado.innerHTML = "";
+    estado.style.borderColor = "green";
+  }
+  if(tipoAnimal.value == ""){
+    errores++;
+    event.preventDefault();
+    spanTipoAnimal.innerHTML = "Por favor elija una opción";
+    tipoAnimal.style.borderColor = "red";
+    spanTipoAnimal.style.color = "red";
+    spanTipoAnimal.style.fontSize = "10px";
+  }else{
+    spanTipoAnimal.innerHTML = "";
+    tipoAnimal.style.borderColor = "green";
+  }
+  if(provincia.value == ""){
+    errores++;
+    event.preventDefault();
+    spanProvincia.innerHTML = "Por favor elija una opción";
+    provincia.style.borderColor = "red";
+    spanProvincia.style.color = "red";
+    spanProvincia.style.fontSize = "10px";
+  }else{
+    spanProvincia.innerHTML = "";
+    provincia.style.borderColor = "green";
+  }
+  if(raza.value == ""){
+    errores++;
+    event.preventDefault();
+    spanRaza.innerHTML = "El campo Raza es obligatorio";
+    raza.style.borderColor = "red";
+    spanRaza.style.color = "red";
+    spanRaza.style.fontSize = "10px";
+  }else{
+    spanRaza.innerHTML = "";
+    raza.style.borderColor = "green";
+  }
+  if(fecha.value == ""){
+    errores++;
+    event.preventDefault();
+    spanFecha.innerHTML = "El campo Fecha es obligatorio";
+    fecha.style.borderColor = "red";
+    spanFecha.style.color = "red";
+    spanFecha.style.fontSize = "10px";
+  }else{
+    spanFecha.innerHTML = "";
+    fecha.style.borderColor = "green";
+  }
+  if(desc.value == ""){
+    errores++;
+    event.preventDefault();
+    spanDesc.innerHTML = "El campo Descripción es obligatorio";
+    desc.style.borderColor = "red";
+    spanDesc.style.color = "red";
+    spanDesc.style.fontSize = "10px";
+  }else{
+    spanDesc.innerHTML = "";
+    desc.style.borderColor = "green";
+  }
+  if(img.value == ""){
+    errores++;
+    event.preventDefault();
+    spanImg.innerHTML = "El campo Foto es obligatorio";
+    img.style.borderColor = "red";
+    spanImg.style.color = "red";
+    spanImg.style.fontSize = "10px";
+  }else{
+    spanImg.innerHTML = "";
+    img.style.borderColor = "green";
+  }
+
+  if(!errores){
+      submit();
+  }
+}
+
+</script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
