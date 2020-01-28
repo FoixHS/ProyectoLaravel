@@ -50,6 +50,7 @@
                   <a href="mailto:Redanimal2020@gmail.com"><i class="fas fa-envelope-square"></i></a>
                 </div>
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Nombre" autofocus>
+                <span class="name"></span>
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -59,6 +60,7 @@
                     <!--input y error apellido-->
 
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email">
+                <span class="email"></span>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -67,6 +69,7 @@
 
 
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Contraseña">
+                <span class="pass"></span>
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -74,6 +77,7 @@
                     @enderror
 
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Repita contraseña">
+                <span class="pass2"></span>
 
                     <!--input y error avatar-->
 
@@ -114,6 +118,75 @@
           </div>
         </div>
       </footer>
+
+<script>
+  var elFormulario = document.querySelector('form.resgistro');
+
+  var errores = 0;
+
+  var nombre = document.querySelector('input#name');
+  var spanNombre = document.querySelector('span.name');
+
+  var email = document.querySelector('input#email');
+  var spanEmail = document.querySelector('span.email');
+
+  var pass = document.querySelector('input#password');
+  var spanPass = document.querySelector('span.pass');
+
+  var pass2 = document.querySelector('input#password-confirm');
+  var spanPass2 = document.querySelector('span.pass2');
+
+  elFormulario.onsubmit = function(event){
+    if(nombre.value == ""){
+      errores++;
+      event.preventDefault();
+      spanNombre.innerHTML = "Por favor ingrese su nombre";
+      nombre.style.borderColor = "red";
+      spanNombre.style.color = "red";
+      spanNombre.style.fontSize = "10px";
+    }else{
+      spanNombre.innerHTML = "";
+      nombre.style.borderColor = "green";
+    }
+    if(email.value == ""){
+      errores++;
+      event.preventDefault();
+      spanEmail.innerHTML = "Por favor ingrese su email";
+      email.style.borderColor = "red";
+      spanEmail.style.color = "red";
+      spanEmail.style.fontSize = "10px";
+    }else{
+      spanEmail.innerHTML = "";
+      email.style.borderColor = "green";
+    }
+    if(pass.value > 7){
+      errores++;
+      event.preventDefault();
+      spanPass.innerHTML = "La contraseña debe tener un mínimo de 8 caracteres";
+      pass.style.borderColor = "red";
+      spanPass.style.color = "red";
+      spanPass.style.fontSize = "10px";
+    }else{
+      spanPass.innerHTML = "";
+      pass.style.borderColor = "green";
+    }
+    if(pass2.value > 7){
+      errores++;
+      event.preventDefault();
+      spanPass2.innerHTML = "La contraseña debe tener un mínimo de 8 caracteres";
+      pass2.style.borderColor = "red";
+      spanPass2.style.color = "red";
+      spanPass2.style.fontSize = "10px";
+    }else{
+      spanPass2.innerHTML = "";
+      pass2.style.borderColor = "green";
+    }
+    if(!errores){
+      submit();
+    }
+  }
+</script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

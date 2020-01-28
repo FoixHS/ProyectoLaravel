@@ -182,6 +182,71 @@ fetch("https://apis.datos.gob.ar/georef/api/provincias")
 </script>
 
 <script>
+  var elFormulario = document.querySelector('form.resgistro');
+
+  var errores = 0;
+
+  var nombre = document.querySelector('input#name');
+  var spanNombre = document.querySelector('span.name');
+
+  var email = document.querySelector('input#email');
+  var spanEmail = document.querySelector('span.email');
+
+  var pass = document.querySelector('input#password');
+  var spanPass = document.querySelector('span.pass');
+
+  var pass2 = document.querySelector('input#password-confirm');
+  var spanPass2 = document.querySelector('span.pass2');
+
+  elFormulario.onsubmit = function(event){
+    if(nombre.value == ""){
+      errores++;
+      event.preventDefault();
+      spanNombre.innerHTML = "Por favor ingrese su nombre";
+      nombre.style.borderColor = "red";
+      spanNombre.style.color = "red";
+      spanNombre.style.fontSize = "10px";
+    }else{
+      spanNombre.innerHTML = "";
+      nombre.style.borderColor = "green";
+    }
+    if(email.value == ""){
+      errores++;
+      event.preventDefault();
+      spanEmail.innerHTML = "Por favor ingrese su email";
+      email.style.borderColor = "red";
+      spanEmail.style.color = "red";
+      spanEmail.style.fontSize = "10px";
+    }else{
+      spanEmail.innerHTML = "";
+      email.style.borderColor = "green";
+    }
+    if(pass.value > 7){
+      errores++;
+      event.preventDefault();
+      spanPass.innerHTML = "La contraseña debe tener un mínimo de 8 caracteres";
+      pass.style.borderColor = "red";
+      spanPass.style.color = "red";
+      spanPass.style.fontSize = "10px";
+    }else{
+      spanPass.innerHTML = "";
+      pass.style.borderColor = "green";
+    }
+    if(pass2.value > 7){
+      errores++;
+      event.preventDefault();
+      spanPass2.innerHTML = "La contraseña debe tener un mínimo de 8 caracteres";
+      pass2.style.borderColor = "red";
+      spanPass2.style.color = "red";
+      spanPass2.style.fontSize = "10px";
+    }else{
+      spanPass2.innerHTML = "";
+      pass2.style.borderColor = "green";
+    }
+  }
+</script>
+
+<script>
 
 var elFormulario = document.querySelector('form.postear');
 
