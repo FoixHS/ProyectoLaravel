@@ -49,7 +49,7 @@
                   <a href="https://twitter.com/RedAnimal2020"><i class="fab fa-twitter"></i></a>
                   <a href="mailto:Redanimal2020@gmail.com"><i class="fas fa-envelope-square"></i></a>
                 </div>
-                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Nombre" autofocus>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" placeholder="Nombre" autofocus>
                 <span class="name"></span>
                     @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -120,7 +120,7 @@
       </footer>
 
 <script>
-  var elFormulario = document.querySelector('form.resgistro');
+  var elFormulario = document.querySelector('form.registro');
 
   var errores = 0;
 

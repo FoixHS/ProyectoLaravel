@@ -73,10 +73,8 @@ form.postear {
 	justify-content: center;
 	flex-direction: column;
 	padding: 0 50px;
-	height: 80vh;
+	height: 100%;
 	text-align: center;
-	margin-top: 3vh;
-	margin-bottom: 3vh;
 }
 
 input {
@@ -103,6 +101,8 @@ main{
 	min-height: 480px;
 	margin-top: 40px;
 	margin-bottom: 20px;
+	height: 700px;
+
 }
 
 .form-container {
