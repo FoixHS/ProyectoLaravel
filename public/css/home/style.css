@@ -90,15 +90,13 @@ body{
 }
 @media (max-width: 485px) {
   .filtro{
-    flex-direction: row;
-    align-items: flex-start;
-    height: 100%;
-    padding: 3px;
-  }
-  .filtro label{
-    font-size:10px;
-  }
-}
+    width: 85vw;
+  }}
+@media (max-width: 485px) {
+    .filtro{
+      width: 100%;
+    }}
+
 
 
 /*posteos*/
@@ -110,11 +108,12 @@ body{
   align-items: center;
   flex-wrap: wrap;
   width:70vw;
-  margin-bottom: 5vh;
 }
 .posteo{
   width: 30%;
   border: solid 2px black;
+  margin-bottom: 5vh;
+  background-color: #FFFFFF;
 }
 .type{
   font-weight: bold;
@@ -122,6 +121,7 @@ body{
 .foto-posteo img{
   width: 100%;
   margin-bottom: 1vh;
+  height: 20vh;
 }
 
 #perdido{
@@ -147,11 +147,40 @@ body{
   color: #FFFFFF;
   font-size: 12px;
   font-weight: bold;
-  padding: 12px 45px;
+  padding: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1vh;
 }
+
+@media (max-width: 1015px) {
+  .estado-posteo{
+    font-size: 10px;
+}h3{
+  font-size: 20px!important;
+}}
+@media (max-width: 972px) {
+  .estado-posteo{
+    font-size: 9px;
+}}
+@media (max-width: 865px) {
+  .posteo{
+    width: 40%;
+}}
+@media (max-width: 655px) {
+  .posteo{
+    width: 45%;
+}}
+@media (max-width: 585px) {
+  .posteo{
+    width: 55%;
+    margin-left: 25%;
+}}
+@media (max-width: 420px) {
+  .posteo{
+    width: 75%;
+    margin-left: 15%;
+}}
 
 /** PAGINACION **/
 

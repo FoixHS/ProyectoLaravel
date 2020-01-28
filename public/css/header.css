@@ -12,6 +12,9 @@
     border-radius: 6px;
     color: white!important;
   }
+  .navbar-toggler{
+    z-index: 900;
+  }
   a.nav-link.separar2{
     margin-left: 10px;
   }

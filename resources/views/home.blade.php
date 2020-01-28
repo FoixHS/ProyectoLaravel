@@ -97,7 +97,7 @@
                         <input id="Todos" type="radio" name="filtro" value="todos"><span class="filtros"><label for="Todos">Todos</label></span>
                     </div>
                     <div>
-                      <button type="submit" name="button">Filtrar</button>
+                      <button type="submit" class="filtro" name="button">Filtrar</button>
                     </div>
               </div>
         </form>
