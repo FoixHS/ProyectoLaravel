@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/css/postear/estilos.css">
   <link rel="stylesheet" href="/css/login/fontello/css/fontello.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/5d9b9802b3.js" crossorigin="anonymous"></script>
   <title>Subir Posteo</title>
 </head>
 
@@ -53,7 +54,6 @@
 
 <main>
     <div class="postear container">
-
         <form class="postear" action="/agregarPosteo" method="post" form="postear" enctype="multipart/form-data">
           {{csrf_field()}}
           <select class="select-posteo form-control @error('estado') is-invalid @enderror" name="estado" id="estado" >
@@ -83,8 +83,13 @@
           <br>
 
           <select class="select-posteo form-control @error('provincia') is-invalid @enderror" name="provincia">
-            <option value="provincia" disable selected>Seleccione su provincia</option>
+            <option value="" disable selected>Seleccione su provincia</option>
           </select>
+          @error('provincia')
+              <span class="invalid-feedback" role="alert">
+                  <strong style="color:red">{{ $message }}</strong>
+              </span>
+          @enderror
 
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
           <input type="hidden" name="user_email" value="{{Auth::user()->email}}">
@@ -146,6 +151,7 @@
         </form>
       </div>
          </main>
+
          <footer>
            <div class="footer-container">
              <div class="left-col">
@@ -161,7 +167,7 @@
                <div class="border"></div>
                <p>Ingresa tu email para recibir noticias e informacion.</p>
                <form action="" class="correo-form">
-                 <input type="text" class="txtb" placeholder="Ingresa tu email">
+                 <input type="email" class="txtb" placeholder="Ingresa tu email">
                  <input type="submit" class="btnn" value="Enviar">
                </form>
              </div>

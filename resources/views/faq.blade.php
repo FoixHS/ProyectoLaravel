@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Preguntas Frecuentes</title>
     <link rel="stylesheet" href="/css/faq/faq.css">
+    <script src="https://kit.fontawesome.com/5d9b9802b3.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   </head>
@@ -201,7 +202,7 @@
             <div class="border"></div>
             <p>Ingresa tu email para recibir noticias e informacion.</p>
             <form action="" class="correo-form">
-              <input type="text" class="txtb" placeholder="Ingresa tu email">
+              <input type="email" class="txtb" placeholder="Ingresa tu email">
               <input type="submit" class="btnn" value="Enviar">
             </form>
           </div>

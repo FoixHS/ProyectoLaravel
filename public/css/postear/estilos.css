@@ -73,7 +73,7 @@ form.postear {
 	justify-content: center;
 	flex-direction: column;
 	padding: 0 50px;
-	height: 120vh;
+	height: 80vh;
 	text-align: center;
 }
 
@@ -153,6 +153,8 @@ main{
 .select-posteo option {
 	font-weight:normal;
 }
+
+
 @media (max-width: 1250px) {
     .container{
 			width: 70%!important;

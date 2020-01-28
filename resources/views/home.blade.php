@@ -166,7 +166,7 @@
       <div class="border"></div>
       <p>Ingresa tu email para recibir noticias e informacion.</p>
       <form action="" class="correo-form">
-        <input type="text" class="txtb" placeholder="Ingresa tu email">
+        <input type="email" class="txtb" placeholder="Ingresa tu email">
         <input type="submit" class="btnn" value="Enviar">
       </form>
     </div>
