@@ -22,13 +22,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="izquierda navbar-nav mr-lg-auto">
               <li class="nav-item active ml-lg-auto">
-                <a class="nav-link separar1" href="#"><span>Adoptar</span>!</a>
+                <a class="nav-link separar1" href='/home?filtro=adopt&button='><span>Adoptar</span>!</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link separar2" href="faq"><span>Preguntas Frecuentes</span></a>
               </li>
             </ul>
-            <ul class="navbar-nav ml-lg-auto">
+            <ul style="margin-right: 95px;" class="navbar-nav ml-lg-auto">
               <li class="nav-item active  ml-lg-auto mr-lg-5">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,12 +41,9 @@
                   <a class="dropdown-item able" href="{{ route('logout') }}">Cerrar sesión</a>
                   <div class="dropdown-divider"></div>
                   <span class="dropdown-item disable" href="#">Red de cuidado</span>
-                  <a class="dropdown-item able" href="#">Refugios</a>
-                  <a class="dropdown-item able" href="#">Cuidador en tránsito</a>
-                  <a class="dropdown-item able" href="#">Paseadores</a>
-                  <a class="dropdown-item able" href="#">Veterinarias</a>
-                  <a class="dropdown-item able" href="#">Entrenadores</a>
-                  <a class="dropdown-item able" href="#">Guias de crianza</a>
+                  <a target="_blank" class="dropdown-item able" href="https://www.facebook.com/notes/ro-carrizo/listado-de-asociaciones-y-refugios-de-la-provincia-de-buenos-aires/10152366543223954/">Refugios</a>
+                  <a target="_blank" class="dropdown-item able" href="https://www.paseaperros.com.ar/paseadores/buenos-aires">Paseadores</a>
+                  <a target="_blank" class="dropdown-item able" href="https://www.buenosaires.gob.ar/agenciaambiental/mascotas/atenciones-veterinarias-gratuitas">Veterinarias</a>
                 </div>
                 </li>
             </ul>
@@ -104,8 +101,8 @@
   <div class="footer-container">
     <div class="left-col">
       <div class="social-medias">
-        <a href="https://www.facebook.com/Red-Animal-100121648220121/"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com/RedAnimal2020"><i class="fab fa-twitter"></i></a>
+        <a target="_blank" href="https://www.facebook.com/Red-Animal-100121648220121/"><i class="fab fa-facebook-f"></i></a>
+        <a target="_blank" href="https://twitter.com/RedAnimal2020"><i class="fab fa-twitter"></i></a>
         <a href="mailto:Redanimal2020@gmail.com"><i class="fas fa-envelope-square"></i></a>
       </div>
       <p class="rights-text">© 2020 Creado por Alumnos Digital House Todos los derechos se reservan.</p>

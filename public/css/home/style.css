@@ -6,8 +6,7 @@
   font-family: 'Nunito', sans-serif;
 }
 body{
-  background: url(img/bg2.png);
-
+   background: url(img/bg2.png);
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
@@ -81,20 +80,19 @@ body{
 @media (max-width: 850px) {
   .filtro{
     flex-direction: row;
-    align-items: flex-start;
+    width: 85vw;
     padding: 3px;
   }
-  .filtro label{
-    font-size:15px;
-  }
 }
-@media (max-width: 485px) {
+@media (max-width: 675px) {
   .filtro{
+    flex-direction: column;
+    height: 190px;
     width: 85vw;
   }}
 @media (max-width: 485px) {
     .filtro{
-      width: 100%;
+      width: 85%;
     }}
 
 
@@ -107,7 +105,7 @@ body{
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width:70vw;
+  width:90vw;
 }
 .posteo{
   width: 30%;
@@ -154,27 +152,21 @@ body{
 }
 
 @media (max-width: 1015px) {
-  .estado-posteo{
-    font-size: 10px;
-}h3{
-  font-size: 20px!important;
-}}
+    h3{
+    font-size: 20px!important;
+  }
+}
 @media (max-width: 972px) {
-  .estado-posteo{
-    font-size: 9px;
-}}
+}
 @media (max-width: 865px) {
-  .posteo{
-    width: 40%;
-}}
-@media (max-width: 655px) {
   .posteo{
     width: 45%;
 }}
+
 @media (max-width: 585px) {
   .posteo{
-    width: 55%;
-    margin-left: 25%;
+    width: 85%;
+    margin: auto;
 }}
 @media (max-width: 420px) {
   .posteo{

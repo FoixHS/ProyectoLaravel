@@ -11,7 +11,7 @@
 <body>
   <div class="content">
         <nav class="navbar navbar-expand-lg navbar-dark color">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="home">
         <img class="logo" src="/css/home/img/logo2.png" width="70" height="60" class="d-inline-block align-top" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,14 +27,9 @@
                   </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <span class="dropdown-item disable" href="#">A tu servicio..</span>
-                  <a class="dropdown-item able" href="#">Paseadores</a>
-                  <a class="dropdown-item able" href="#">Veterinarias</a>
-                  <a class="dropdown-item able" href="#">Entrenadores</a>
-                  <a class="dropdown-item able" href="#">Guias de crianza</a>
-                  <div class="dropdown-divider"></div>
-                  <span class="dropdown-item disable" href="#">Red de cuidado..</span>
-                  <a class="dropdown-item able" href="#">Refugios</a>
-                  <a class="dropdown-item able" href="#">Cuidador en tránsito</a>
+                  <a target="_blank" class="dropdown-item able" href="https://www.facebook.com/notes/ro-carrizo/listado-de-asociaciones-y-refugios-de-la-provincia-de-buenos-aires/10152366543223954/">Refugios</a>
+                  <a target="_blank" class="dropdown-item able" href="https://www.paseaperros.com.ar/paseadores/buenos-aires">Paseadores</a>
+                  <a target="_blank" class="dropdown-item able" href="https://www.buenosaires.gob.ar/agenciaambiental/mascotas/atenciones-veterinarias-gratuitas">Veterinarias</a>
                 </div>
                 </li>
             </ul>
@@ -102,8 +97,8 @@
         <div class="footer-container">
           <div class="left-col">
             <div class="social-medias">
-              <a href="https://www.facebook.com/Red-Animal-100121648220121/"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://twitter.com/RedAnimal2020"><i class="fab fa-twitter"></i></a>
+              <a target="_blank" href="https://www.facebook.com/Red-Animal-100121648220121/"><i class="fab fa-facebook-f"></i></a>
+              <a target="_blank" href="https://twitter.com/RedAnimal2020"><i class="fab fa-twitter"></i></a>
               <a href="mailto:Redanimal2020@gmail.com"><i class="fas fa-envelope-square"></i></a>
             </div>
             <p class="rights-text">© 2020 Creado por Alumnos Digital House Todos los derechos se reservan.</p>
